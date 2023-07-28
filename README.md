@@ -12,7 +12,6 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## About the Project
 
@@ -37,8 +36,8 @@ This project is a collaborative effort by the following group members:
 
 - Course: COMP 380 - Introduction to Software Engineering
 - University: California State University Northridge (CSUN)
-- Semester: [Semester and Year]
-- Instructor: [Instructor's Name]
+- Semester: Summer 2023
+- Instructor: Abhishek Verma
 
 ## Features
 
