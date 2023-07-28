@@ -31,6 +31,8 @@ This project is a collaborative effort by the following group members:
 
 3. Ian Valle *(GitHub: [Sawble](https://github.com/Sawble))*
    - Role: Testing & Quality Assurance
+4. Davit Sargsyan *(GitHub: [DavitSargsyan001](https://github.com/DavitSargsyan001))*
+   - Role: Software Architect & Lead Developer
 
 ## Class Information
 
