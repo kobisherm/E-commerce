@@ -1,7 +1,6 @@
 # MyECommerceApp - E-commerce Desktop Application
 
-![Project Logo or Screenshot](project_logo.png) *(Optional: You can include a project logo or a relevant screenshot)*
-
+![Logo](Logo.webp)
 ## Table of Contents
 - [About the Project](#about-the-project)
 - [Group Members](#group-members)
