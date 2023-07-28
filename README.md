@@ -27,7 +27,7 @@ This project is a collaborative effort by the following group members:
    - Role: Project Lead & Frontend Developer
 
 2. Armon Lee *(GitHub: [icon-1999](https://github.com/Icon-1999))*
-   - Role: Frontend Developer
+   - Role: Frontend Developer & Project Manager
 
 3. Bob Johnson *(GitHub: [bobjohnson](https://github.com/bobjohnson))*
    - Role: Testing & Quality Assurance
