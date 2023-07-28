@@ -1,6 +1,9 @@
 # MyECommerceApp - E-commerce Desktop Application
 
+<div align="center">
 ![Logo](Logo.webp)
+</div>
+
 ## Table of Contents
 - [About the Project](#about-the-project)
 - [Group Members](#group-members)
