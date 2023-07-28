@@ -23,8 +23,8 @@ The primary goal of this project is to apply software engineering principles, de
 
 This project is a collaborative effort by the following group members:
 
-1. John Doe *(GitHub: [johndoe](https://github.com/johndoe))*
-   - Role: Project Lead & Frontend Developer
+1. Kobi Sherman *(GitHub: [kobisherm](https://github.com/kobisherm))*
+   - Role: Scrum master
 
 2. Armon Lee *(GitHub: [icon-1999](https://github.com/Icon-1999))*
    - Role: Frontend Developer
