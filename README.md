@@ -26,8 +26,8 @@ This project is a collaborative effort by the following group members:
 1. John Doe *(GitHub: [johndoe](https://github.com/johndoe))*
    - Role: Project Lead & Frontend Developer
 
-2. Jane Smith *(GitHub: [janesmith](https://github.com/janesmith))*
-   - Role: Backend Developer & Database Management
+2. Armon Lee *(GitHub: [icon-1999](https://github.com/Icon-1999))*
+   - Role: Frontend Developer
 
 3. Bob Johnson *(GitHub: [bobjohnson](https://github.com/bobjohnson))*
    - Role: Testing & Quality Assurance
