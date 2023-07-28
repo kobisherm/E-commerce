@@ -1,8 +1,8 @@
 # MyECommerceApp - E-commerce Desktop Application
 
-<div align="center">
-![Logo](Logo.webp)
-</div>
+<p align="center">
+<img src="Logo.webp" alt="Project Logo">
+</p>
 
 ## Table of Contents
 - [About the Project](#about-the-project)
