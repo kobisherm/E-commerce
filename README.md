@@ -29,7 +29,7 @@ This project is a collaborative effort by the following group members:
 2. Armon Lee *(GitHub: [icon-1999](https://github.com/Icon-1999))*
    - Role: Frontend Developer & Project Manager
 
-3. Bob Johnson *(GitHub: [bobjohnson](https://github.com/bobjohnson))*
+3. Ian Valle *(GitHub: [Sawble](https://github.com/Sawble))*
    - Role: Testing & Quality Assurance
 
 ## Class Information
