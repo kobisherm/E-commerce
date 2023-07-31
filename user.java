@@ -1,3 +1,7 @@
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.IOException;
+
 public class User {
 	private String userID;
 	private String email;
@@ -19,6 +23,21 @@ public class User {
 	//Registers a new user with the application
 	public void registerUser()
 	{
+		this.email = email;
+		this.password = password;
+		this.isRegistered = true;
+
+		try {
+			FileWriter writer = new FileWriter("users.txt", true);
+			BufferedWriter bufferedWriter = new BufferedWriter(writer);
+
+			bufferedWriter.write(email + "," + password);
+			bufferedWriter.newLine(); // We add a new line after entering one user's info
+
+			bufferedWriter.close(); // Need to close after registering a user
+		} catch (IOException e){
+			e.printStackTrace();
+		}
 		
 	}
 	
