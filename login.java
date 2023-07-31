@@ -66,6 +66,8 @@ public class login implements ActionListener {
 
         if (Username.equals("icon1999") && Password.equals("imbatman")) //will add hashmap of users soon
             JOptionPane.showMessageDialog(null, "Login Successful");
+            //HomePage homePage = new HomePage();
+            //homePage.display();
         else
             JOptionPane.showMessageDialog(null, "Username or Password mismatch ");
     }
