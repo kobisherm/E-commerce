@@ -9,51 +9,78 @@ public class login implements ActionListener {
     private static JTextField userbox;
     private static JPasswordField passbox;
     private static JButton button;
-    
+    private static JLabel logoLabel;
 
     public static void main(String[] args) {
+        try {
+            // Set system look and feel
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch(Exception e) {
+            // If the look and feel cannot be set, print the error
+            System.out.println("Look and Feel not set");
+        }
         panel();
     }
 
     public static void panel() {
-        JPanel panel = new JPanel();
-        panel.setLayout(null);
+        JPanel panel = new JPanel(new GridBagLayout()); 
+        panel.setBackground(Color.BLACK); // Set background color to black
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(15, 15, 15, 15); 
 
-        //display window
+        // Display logo
+        ImageIcon logoIcon = new ImageIcon("Logo.png"); // Load the logo
+        logoLabel = new JLabel(logoIcon); 
+        gbc.gridx = 0; // Column
+        gbc.gridy = 0; // Row
+        gbc.gridwidth = 2; // Span across 2 columns
+        panel.add(logoLabel, gbc);
+
+        // Display window
         JFrame window = new JFrame();
         window.setTitle("LOGIN PAGE");
-        window.setLocation(new Point(500, 300));
+        window.setLocationRelativeTo(null); // Centers the window
         window.add(panel);
-        window.setSize(new Dimension(400, 200));
+        window.setSize(new Dimension(700, 700));
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        //display "username"
+        // Display "username"
         usertext = new JLabel("Username");
-        usertext.setBounds(100, 8, 70, 20);
-        panel.add(usertext);
+        usertext.setForeground(Color.RED); // Set text color to red
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.gridwidth = 1; // Reset gridwidth
+        panel.add(usertext, gbc);
 
-        //display username text box
-        userbox = new JTextField();
-        userbox.setBounds(100, 27, 193, 28);
-        panel.add(userbox);
+        // Display username text box
+        userbox = new JTextField(20);
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        panel.add(userbox, gbc);
 
-        //display "password"
+        // Display "password"
         passtext = new JLabel("Password");
-        passtext.setBounds(100, 55, 70, 20);
-        panel.add(passtext);
+        passtext.setForeground(Color.RED); // Set text color to red
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        panel.add(passtext, gbc);
 
-        //display password text box
-        passbox = new JPasswordField();
-        passbox.setBounds(100, 75, 193, 28);
-        panel.add(passbox);
+        // Display password text box
+        passbox = new JPasswordField(20);
+        gbc.gridx = 1;
+        gbc.gridy = 2;
+        panel.add(passbox, gbc);
 
-        //display button and functionality
+        // Display button and functionality
         button = new JButton("Login");
-        button.setBounds(100, 110, 90, 25);
-        button.setForeground(Color.WHITE);
+        button.setForeground(Color.RED);
         button.setBackground(Color.BLACK);
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        gbc.gridwidth = 2; // Spans across 2 columns
+        gbc.fill = GridBagConstraints.HORIZONTAL; // Button grows to fill space horizontally
         button.addActionListener((ActionListener) new login()); //Adds an ActionListener to the button and calls actionPerformed method
-        panel.add(button);
+        panel.add(button, gbc);
 
         window.setVisible(true); //Make the window visible
     }
@@ -66,8 +93,6 @@ public class login implements ActionListener {
 
         if (Username.equals("icon1999") && Password.equals("imbatman")) //will add hashmap of users soon
             JOptionPane.showMessageDialog(null, "Login Successful");
-            //HomePage homePage = new HomePage();
-            //homePage.display();
         else
             JOptionPane.showMessageDialog(null, "Username or Password mismatch ");
     }
