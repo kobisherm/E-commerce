@@ -19,7 +19,7 @@ public class HomePage extends JFrame{
 	JButton searchButton;
 	
 	//Instead of display homepage
-	public HomePage()
+	void HomePage()
 	{
 		final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		final int screenCenterX = screenSize.width / 2;
