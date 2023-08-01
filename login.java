@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class login implements ActionListener {
+public class login extends JFrame {
     private static JLabel passtext, usertext;
     private static JTextField userbox;
     private static JPasswordField passbox;
@@ -79,21 +79,35 @@ public class login implements ActionListener {
         gbc.gridy = 3;
         gbc.gridwidth = 2; // Spans across 2 columns
         gbc.fill = GridBagConstraints.HORIZONTAL; // Button grows to fill space horizontally
-        button.addActionListener((ActionListener) new login()); //Adds an ActionListener to the button and calls actionPerformed method
+        
+        
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent event) {
+            String Username = userbox.getText();
+            String Password = new String(passbox.getPassword());
+
+            if (Username.equals("batman") && Password.equals("123")){
+                //JOptionPane.showMessageDialog(null, "Login Successful");
+                //opens Homepage class
+                HomePage H = new HomePage();
+                H.HomePage();
+                //closes login window
+                window.setVisible(false);
+                window.dispose();
+            } //will add hashmap of users soon
+            else
+                JOptionPane.showMessageDialog(null, "Username or Password mismatch ");
+            }
+        });//Adds an ActionListener to the button and calls actionPerformed method
+        
+        
         panel.add(button, gbc);
 
         window.setVisible(true); //Make the window visible
+
     }
 
     //username and password check
-    @Override
-    public void actionPerformed(ActionEvent event) {
-        String Username = userbox.getText();
-        String Password = new String(passbox.getPassword());
-
-        if (Username.equals("icon1999") && Password.equals("imbatman")) //will add hashmap of users soon
-            JOptionPane.showMessageDialog(null, "Login Successful");
-        else
-            JOptionPane.showMessageDialog(null, "Username or Password mismatch ");
-    }
+    
 }
