@@ -21,6 +21,13 @@ public class RegistrationPage extends JPanel {
 		add(registerButton);
 
 		// Adding event handler
-
+		registerButton.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e)
+			{
+				User user = new User();
+				user.registerUser(emailField.getText(), new String(passwordField.getPassword());
+				JOptionPane.showMessageDialog(null, "Registration Successful!");	
+			}
+		});
 	}
 }
