@@ -8,7 +8,8 @@ public class login extends JFrame {
     private static JLabel passtext, usertext;
     private static JTextField userbox;
     private static JPasswordField passbox;
-    private static JButton button;
+    private static JButton logButton;
+    private static JButton regButton;
     private static JLabel logoLabel;
 
     public static void main(String[] args) {
@@ -71,17 +72,15 @@ public class login extends JFrame {
         gbc.gridy = 2;
         panel.add(passbox, gbc);
 
-        // Display button and functionality
-        button = new JButton("Login");
-        button.setForeground(Color.RED);
-        button.setBackground(Color.BLACK);
+        // Display logButton and functionality
+        logButton = new JButton("Login");
+        logButton.setForeground(Color.RED);
+        logButton.setBackground(Color.BLACK);
         gbc.gridx = 0;
         gbc.gridy = 3;
         gbc.gridwidth = 2; // Spans across 2 columns
         gbc.fill = GridBagConstraints.HORIZONTAL; // Button grows to fill space horizontally
-        
-        
-        button.addActionListener(new ActionListener() {
+        logButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent event) {
             String Username = userbox.getText();
@@ -100,9 +99,29 @@ public class login extends JFrame {
                 JOptionPane.showMessageDialog(null, "Username or Password mismatch ");
             }
         });//Adds an ActionListener to the button and calls actionPerformed method
+        panel.add(logButton, gbc);
         
-        
-        panel.add(button, gbc);
+
+        // Display regButton and functionality
+        regButton = new JButton("Register");
+        regButton.setForeground(Color.RED);
+        regButton.setBackground(Color.BLACK);
+        gbc.gridx = 0;
+        gbc.gridy = 4;
+        gbc.gridwidth = 2; // Spans across 2 columns
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        regButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                //opens Homepage class
+                register R = new register();
+                R.RegistrationPage();
+                //closes login window
+                window.setVisible(false);
+                window.dispose();
+            }
+        });//Adds an ActionListener to the button and calls actionPerformed method
+        panel.add(regButton, gbc);
 
         window.setVisible(true); //Make the window visible
 

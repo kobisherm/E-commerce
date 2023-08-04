@@ -1,13 +1,15 @@
+import java.io.*;
+import java.util.*;
+import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
-import java.awt.enet.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class RegistrationPage extends JPanel {
+public class register extends JPanel {
 	private JTextField emailField;
 	private JPasswordField passwordField;
 	private JButton registerButton;
 
-	public RegistrationPage() {
+	void RegistrationPage() {
 		// Initialization...
 		emailField = new JTextField(20);
 		passwordField = new JPasswordField(20);
@@ -24,7 +26,7 @@ public class RegistrationPage extends JPanel {
 		registerButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e)
 			{
-				User user = new User();
+				user user = new user();
 				user.registerUser(emailField.getText(), new String(passwordField.getPassword());
 				JOptionPane.showMessageDialog(null, "Registration Successful!");	
 			}
