@@ -21,7 +21,7 @@ public class user {
 	
 	
 	//Registers a new user with the application
-	public void registerUser()
+	public boolean registerUser(String userID, String email, String password)
 	{
 		this.email = email;
 		this.password = password;
@@ -31,13 +31,16 @@ public class user {
 			FileWriter writer = new FileWriter("users.txt", true);
 			BufferedWriter bufferedWriter = new BufferedWriter(writer);
 
-			bufferedWriter.write(email + "," + password);
+			bufferedWriter.write(userID + "," + email + "," + password);
 			bufferedWriter.newLine(); // We add a new line after entering one user's info
 
 			bufferedWriter.close(); // Need to close after registering a user
 		} catch (IOException e){
 			e.printStackTrace();
+			return false;
 		}
+
+		return true;
 		
 	}
 	

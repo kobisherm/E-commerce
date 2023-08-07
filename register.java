@@ -4,12 +4,12 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class register extends JPanel {
+public class Register extends JPanel {
 	private JTextField emailField;
 	private JPasswordField passwordField;
 	private JButton registerButton;
 
-	void RegistrationPage() {
+	public Register() {
 		// Initialization...
 		emailField = new JTextField(20);
 		passwordField = new JPasswordField(20);
@@ -26,9 +26,21 @@ public class register extends JPanel {
 		registerButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e)
 			{
-				user user = new user();
-				user.registerUser(emailField.getText(), new String(passwordField.getPassword());
-				JOptionPane.showMessageDialog(null, "Registration Successful!");	
+				String userID = UUID.randomUUID().toString();
+
+				User user = new User(userID, emailField.getText(), new String(passwordField.getPassword()));
+				boolean success = user.registerUser(userID, emailField.getText(), new String(passwordField.getPassword()));
+
+				if(success)
+				{
+					JOptionPane.showMessageDialog(null, "Registration Successful!");
+					HomePage home = new HomePage();
+					home.HomePage();
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(null, "Registration Failed!");
+				}
 			}
 		});
 	}
