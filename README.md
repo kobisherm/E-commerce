@@ -1,4 +1,4 @@
-# "HighLow Shoes" - E-commerce Desktop Application
+# "HILO Shoes" - E-commerce Desktop Application
 
 <p align="center">
 <img src="Logo.webp" alt="Project Logo">
@@ -15,7 +15,7 @@
 
 ## About the Project
 
-"HighLow Shoes" is a Java-based desktop application developed as a project for the COMP 380 Introduction to Software Engineering class at California State University Northridge. The application simulates an E-commerce shoes store, providing users with features such as product browsing, user registration, shopping cart management, and order placement.
+"HILO Shoes" is a Java-based desktop application developed as a project for the COMP 380 Introduction to Software Engineering class at California State University Northridge. The application simulates an E-commerce shoes store, providing users with features such as product browsing, user registration, shopping cart management, and order placement.
 
 The primary goal of this project is to apply software engineering principles, design patterns, and best practices to build a functional and well-structured application. The application uses Java's Object-Oriented Programming (OOP) paradigm, Swing for GUI components, and Git for version control.
 
@@ -52,7 +52,7 @@ This project is a collaborative effort by the following group members:
 
 ## Installation
 
-To run the "HighLow Shoes" application on your local machine, you will need:
+To run the "HILO Shoes" application on your local machine, you will need:
 - Java Development Kit (JDK) version [Version]
 - Eclipse IDE or any preferred Java IDE
 
@@ -80,7 +80,7 @@ git clone https://github.com/yourusername/MyECommerceApp.git
 
 ## Contributing
 
-We welcome contributions to enhance the functionality and usability of the "HighLow Shoes" project. To contribute, follow these steps:
+We welcome contributions to enhance the functionality and usability of the "HILO Shoes" project. To contribute, follow these steps:
 
 1. Fork the repository on GitHub.
 
