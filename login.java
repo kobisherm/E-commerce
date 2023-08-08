@@ -90,7 +90,7 @@ public class login extends JFrame {
                 //JOptionPane.showMessageDialog(null, "Login Successful");
                 //opens Homepage class
                 HomePage H = new HomePage();
-                H.HomePage();
+                H.DisplayHomePage();
                 //closes login window
                 window.setVisible(false);
                 window.dispose();

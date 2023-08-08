@@ -35,7 +35,7 @@ public class register extends JPanel {
 				{
 					JOptionPane.showMessageDialog(null, "Registration Successful!");
 					HomePage home = new HomePage();
-					home.HomePage();
+					home.DisplayHomePage();
 				}
 				else
 				{
