@@ -8,20 +8,14 @@ public class product {
     
     public void loadProducts(String fn) {
         //product variables
-        String productID;
-        String name;
-        String price;
-        String description;
-        String category;
-        String size;
-        String color;
-        String stockQuantity;
+        String productID, name, price, description, category, size, color, stockQuantity;
+        int numberOfProducts = 3;
 
         try{
             Scanner inf = new Scanner(new File(fn));
 
             //read values
-            for(int i = 0; i <= 2; i++){
+            for(int i = 1; i <= numberOfProducts; i++){
             productID = inf.nextLine();
             name = inf.nextLine();
             price = inf.nextLine();

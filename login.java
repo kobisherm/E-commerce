@@ -1,5 +1,3 @@
-import java.io.*;
-import java.util.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -12,18 +10,7 @@ public class login extends JFrame {
     private static JButton regButton;
     private static JLabel logoLabel;
 
-    public static void main(String[] args) {
-        try {
-            // Set system look and feel
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch(Exception e) {
-            // If the look and feel cannot be set, print the error
-            System.out.println("Look and Feel not set");
-        }
-        panel();
-    }
-
-    public static void panel() {
+    public void loginScreen() {
         JPanel panel = new JPanel(new GridBagLayout()); 
         panel.setBackground(Color.BLACK); // Set background color to black
         GridBagConstraints gbc = new GridBagConstraints();

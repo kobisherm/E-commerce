@@ -1,5 +1,4 @@
 package Products;
-import java.util.*;
 
 public class productInfo {
     
