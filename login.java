@@ -115,7 +115,7 @@ public class login extends JFrame {
             public void actionPerformed(ActionEvent event) {
                 //opens Homepage class
                 register R = new register();
-                R.RegistrationPage();
+                R.register();
                 //closes login window
                 window.setVisible(false);
                 window.dispose();
