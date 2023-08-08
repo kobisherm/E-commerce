@@ -1,0 +1,24 @@
+105
+Nike Dunks
+110.99
+Example Description
+Example Category
+10.5
+Red
+100
+112
+Nike Air Force 1's
+100.99
+Example Description
+Example Category
+9
+White
+115
+120
+Jordan 1's
+110.99
+Example Description
+Example Category
+11.5
+Red & White
+150

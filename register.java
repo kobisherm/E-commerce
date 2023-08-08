@@ -4,12 +4,12 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Register extends JPanel {
+public class register extends JPanel {
 	private JTextField emailField;
 	private JPasswordField passwordField;
 	private JButton registerButton;
 
-	public Register() {
+	void register() {
 		// Initialization...
 		emailField = new JTextField(20);
 		passwordField = new JPasswordField(20);
