@@ -7,8 +7,8 @@ import javax.swing.*;
 public class Register extends JPanel {
 	private JTextField emailField;
 	private JPasswordField passwordField;
-	private JButton registerButton		;
-	private JButton loginButton			;
+	private JButton registerButton;
+	private JButton loginButton;
 
 	void register() {
 		// Initialization...
@@ -24,6 +24,7 @@ public class Register extends JPanel {
 		add(new JLabel("Password:"));
 		add(passwordField);
 		add(registerButton);
+		add(loginButton);
 
 		// Adding event handler
 		registerButton.addActionListener(new ActionListener(){
@@ -49,9 +50,9 @@ public class Register extends JPanel {
 		loginButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e)
 			{
-				// Assuming your login page class is named 'LoginPage' and has a method 'displayLoginPage' to show the login page
-				LoginPage loginPage = new LoginPage();
-				loginPage.displayLoginPage();
+				
+				login loginPage = new login();
+				loginPage.loginScreen();
 			}
 		});
 	}
