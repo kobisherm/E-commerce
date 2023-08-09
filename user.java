@@ -15,16 +15,15 @@ public class User {
 		this.userID = userID;
 		this.email = email;
 		this.password = password;
-		this.isRegistered = true;
+		this.isRegistered = false; // Initially false, we will change this to true after a user registers succesfully
 		this.cart = new ShoppingCart();
 	}
 	
 	
 	//Registers a new user with the application
-	public boolean registerUser(String userID, String email, String password)
+	public boolean registerUser()
 	{
-		this.email = email;
-		this.password = password;
+		this.userID = UUID.randomUUID().toString();
 		this.isRegistered = true;
 
 		try {

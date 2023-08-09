@@ -26,10 +26,9 @@ public class Register extends JPanel {
 		registerButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e)
 			{
-				String userID = UUID.randomUUID().toString();
-
-				User user = new User(userID, emailField.getText(), new String(passwordField.getPassword()));
-				boolean success = user.registerUser(userID, emailField.getText(), new String(passwordField.getPassword()));
+	
+				User user = new User(emailField.getText(), new String(passwordField.getPassword()));
+				boolean success = user.registerUser();
 
 				if(success)
 				{
