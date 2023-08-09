@@ -7,13 +7,16 @@ import javax.swing.*;
 public class Register extends JPanel {
 	private JTextField emailField;
 	private JPasswordField passwordField;
-	private JButton registerButton;
+	private JButton registerButton		;
+	private JButton loginButton			;
 
 	void register() {
 		// Initialization...
 		emailField = new JTextField(20);
 		passwordField = new JPasswordField(20);
 		registerButton = new JButton("Register");
+
+		loginButton = new JButton("Login");
 
 		// Adding Components
 		add(new JLabel("Email:"));
@@ -40,6 +43,15 @@ public class Register extends JPanel {
 				{
 					JOptionPane.showMessageDialog(null, "Registration Failed!");
 				}
+			}
+		});
+
+		loginButton.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e)
+			{
+				// Assuming your login page class is named 'LoginPage' and has a method 'displayLoginPage' to show the login page
+				LoginPage loginPage = new LoginPage();
+				loginPage.displayLoginPage();
 			}
 		});
 	}
