@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class register extends JPanel {
+public class Register extends JPanel {
 	private JTextField emailField;
 	private JPasswordField passwordField;
 	private JButton registerButton;

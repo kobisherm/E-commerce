@@ -2,7 +2,7 @@ import java.io.FileWriter;
 import java.io.BufferedWriter;
 import java.io.IOException;
 
-public class user {
+public class User {
 	private String userID;
 	private String email;
 	private String password;
