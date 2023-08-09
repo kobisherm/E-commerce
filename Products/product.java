@@ -9,7 +9,7 @@ public class product {
     public void loadProducts(String fn) {
         //product variables
         String productID, name, price, description, category, size, color, stockQuantity;
-        int numberOfProducts = 3;
+        int numberOfProducts = 15;
 
         try{
             Scanner inf = new Scanner(new File(fn));
