@@ -1,7 +1,7 @@
 # "HILO Shoes" - E-commerce Desktop Application
 
 <p align="center">
-<img src="Logo.webp" alt="Project Logo">
+<img src="Logo.png" alt="Project Logo">
 </p>
 
 ## Table of Contents
