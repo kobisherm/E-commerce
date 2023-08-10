@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import Products.*;
 
-public class ShoppingCart extends JFrame {
+public class ShoppingCart extends JPanel {
 
     private ArrayList<productInfo> items;
     private double totalPrice;
