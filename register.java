@@ -9,14 +9,30 @@ public class Register extends JFrame {
 	private JPasswordField passwordField;
 	private JButton registerButton;
 	private JButton loginButton;
+	private JLabel storeLogoLabel;
 
 	void register() {
 		// Initialization...
+
+		seyBackground(Color.BLACK);
+
 		emailField = new JTextField(20);
 		passwordField = new JPasswordField(20);
 		registerButton = new JButton("Register");
-
 		loginButton = new JButton("Login");
+
+		ImageIcon storeLogo = new ImageIcon("Logo.png");
+		storeLogoLabel = new JLabel(storeLogo);
+
+		emailField.setForeground(Color.WHITE);  // Text color
+		emailField.setBackground(Color.RED);    // Background color
+		passwordField.setForeground(Color.WHITE);
+		passwordField.setBackground(Color.RED);
+		registerButton.setForeground(Color.WHITE);
+		registerButton.setBackground(Color.RED);
+		loginButton.setForeground(Color.WHITE);
+		loginButton.setBackground(Color.RED);
+		
 
 		// Adding Components
 		add(new JLabel("Email:"));
