@@ -14,7 +14,7 @@ public class Register extends JFrame {
 	void register() {
 		// Initialization...
 
-		seyBackground(Color.BLACK);
+		setBackground(Color.BLACK);
 
 		emailField = new JTextField(20);
 		passwordField = new JPasswordField(20);
