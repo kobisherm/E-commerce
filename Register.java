@@ -28,7 +28,6 @@ public class Register extends JFrame {
         loginButton = new JButton("Login");
         loginButton.setForeground(Color.RED);
 
-<<<<<<< HEAD:register.java
         JPanel emailPanel = createPanel();
         
         JLabel emailLabel = new JLabel("Email:");
@@ -51,20 +50,6 @@ public class Register extends JFrame {
         buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
         buttonPanel.add(registerButton);
         buttonPanel.add(loginButton);
-=======
-		//ImageIcon storeLogo = new ImageIcon("Logo.png");
-		storeLogoLabel = new JLabel(AppTheme.logo);
-
-		emailField.setForeground(AppTheme.white);  // Text color
-		emailField.setBackground(AppTheme.red);    // Background color
-		passwordField.setForeground(AppTheme.white);
-		passwordField.setBackground(AppTheme.red);
-		registerButton.setForeground(AppTheme.white);
-		registerButton.setBackground(AppTheme.red);
-		loginButton.setForeground(AppTheme.white);
-		loginButton.setBackground(AppTheme.red);
-		
->>>>>>> 2869f10ac6f7457a1e73e6dbf70cd84d6ca50ad7:Register.java
 
         add(emailPanel);
         add(passwordPanel);
@@ -103,7 +88,6 @@ public class Register extends JFrame {
 
 		setVisible(true);
 	}
-<<<<<<< HEAD:register.java
 	
 	private JPanel createPanel() {
         JPanel panel = new JPanel();
@@ -124,6 +108,3 @@ public class Register extends JFrame {
 	
 	
 }
-=======
-}
->>>>>>> 2869f10ac6f7457a1e73e6dbf70cd84d6ca50ad7:Register.java
