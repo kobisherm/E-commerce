@@ -2,10 +2,10 @@ package Products;
 import java.util.*;
 import java.io.*;
 
-public class product {
+public class Product {
     ArrayList <productInfo> list = new ArrayList<productInfo>();
     PrintStream prt = System.out;
-    
+
     public void loadProducts(String fn) {
         //product variables
         String productID, name, price, description, category, size, color, stockQuantity;
@@ -16,16 +16,16 @@ public class product {
 
             //read values
             for(int i = 1; i <= numberOfProducts; i++){
-            productID = inf.nextLine();
-            name = inf.nextLine();
-            price = inf.nextLine();
-            description = inf.nextLine();
-            category = inf.nextLine();
-            size = inf.nextLine();
-            color = inf.nextLine();
-            stockQuantity = inf.nextLine();
-            productInfo info = new productInfo(productID, name, price, description, category, size, color, stockQuantity);
-            list.add(info);
+                productID = inf.nextLine();
+                name = inf.nextLine();
+                price = inf.nextLine(); //convert to double
+                description = inf.nextLine();
+                category = inf.nextLine();
+                size = inf.nextLine();
+                color = inf.nextLine();
+                stockQuantity = inf.nextLine();
+                productInfo info = new productInfo(productID, name, Double.parseDouble(price), description, category, size, color, stockQuantity);
+                list.add(info);
             }
 
             inf.close();

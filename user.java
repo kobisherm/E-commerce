@@ -1,6 +1,7 @@
 import java.io.FileWriter;
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.util.UUID;
 
 public class User {
 	private String userID;
@@ -10,7 +11,7 @@ public class User {
 	private ShoppingCart cart;
 	
 	// Constructor
-	public User(String userID, String email, String password)
+	public User(String email, String password)
 	{
 		this.userID = userID;
 		this.email = email;

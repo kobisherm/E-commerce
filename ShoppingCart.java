@@ -3,14 +3,15 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import Products.*;
 
 public class ShoppingCart extends JFrame {
 
-    private ArrayList<Product> items;
+    private ArrayList<productInfo> items;
     private double totalPrice;
 
-    private DefaultListModel<Product> cartListModel;
-    private JList<Product> cartList;
+    private DefaultListModel<productInfo> cartListModel;
+    private JList<productInfo> cartList;
     private JLabel totalPriceLabel;
 
     public ShoppingCart() {
@@ -18,7 +19,7 @@ public class ShoppingCart extends JFrame {
         totalPrice = 0.0;
 
         cartListModel = new DefaultListModel<>();
-        cartList = new JList<>(cartListModel);
+        cartList = new JList<>();
         totalPriceLabel = new JLabel("Total Price: $0.00");
 
         JButton addButton = new JButton("Add to Cart");
@@ -53,25 +54,25 @@ public class ShoppingCart extends JFrame {
         setVisible(true);
     }
 
-    public void addItem(Product item) {
+    public void addItem(productInfo item) {
         items.add(item);
         totalPrice += item.getPrice();
     }
 
-    public void removeItem(Product item) {
+    public void removeItem(productInfo item) {
         items.remove(item);
         totalPrice -= item.getPrice();
     }
 
     private void addProductToCart() {
-        Product product = new Product("Sample Product", 9.99);
+        productInfo product = new productInfo(); //"Sample Product", 9.99);
         addItem(product);
         cartListModel.addElement(product);
         updateTotalPriceLabel();
     }
 
     private void removeProductFromCart() {
-        Product selectedProduct = cartList.getSelectedValue();
+        productInfo selectedProduct = cartList.getSelectedValue();
         if (selectedProduct != null) {
             removeItem(selectedProduct);
             cartListModel.removeElement(selectedProduct);

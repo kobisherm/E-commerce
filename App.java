@@ -12,7 +12,7 @@ public class App {
         }
 
         //call and read products
-        product P = new product();
+        Product P = new Product();
         P.loadProducts("Products\\productFile.txt");
 
         //call and read users
