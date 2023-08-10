@@ -4,14 +4,27 @@ public class productInfo {
     
     private String productID;
     private String name;
-    private String price;
+    private double price;
     private String description;
     private String category;
     private String size;
     private String color;
     private String stockQuantity;
 
-    public productInfo(String productID, String name, String price, String description, String category, String size, String color, String stockQuantity) {
+    //temp constructor
+    public productInfo()
+    {
+        this.productID = "";
+        this.name = "";
+        this.price = 0.00;
+        this.description = "";
+        this.category = "";
+        this.size = "";
+        this.color = "";
+        this.stockQuantity = "";
+    }
+
+    public productInfo(String productID, String name, double price, String description, String category, String size, String color, String stockQuantity) {
         this.productID = productID;
         this.name = name;
         this.price = price;
@@ -30,7 +43,7 @@ public class productInfo {
         return name;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
