@@ -21,17 +21,17 @@ public class Register extends JFrame {
 		registerButton = new JButton("Register");
 		loginButton = new JButton("Login");
 
-		ImageIcon storeLogo = new ImageIcon("Logo.png");
-		storeLogoLabel = new JLabel(storeLogo);
+		//ImageIcon storeLogo = new ImageIcon("Logo.png");
+		storeLogoLabel = new JLabel(AppTheme.logo);
 
-		emailField.setForeground(Color.WHITE);  // Text color
-		emailField.setBackground(Color.RED);    // Background color
-		passwordField.setForeground(Color.WHITE);
-		passwordField.setBackground(Color.RED);
-		registerButton.setForeground(Color.WHITE);
-		registerButton.setBackground(Color.RED);
-		loginButton.setForeground(Color.WHITE);
-		loginButton.setBackground(Color.RED);
+		emailField.setForeground(AppTheme.white);  // Text color
+		emailField.setBackground(AppTheme.red);    // Background color
+		passwordField.setForeground(AppTheme.white);
+		passwordField.setBackground(AppTheme.red);
+		registerButton.setForeground(AppTheme.white);
+		registerButton.setBackground(AppTheme.red);
+		loginButton.setForeground(AppTheme.white);
+		loginButton.setBackground(AppTheme.red);
 		
 
 		// Adding Components
