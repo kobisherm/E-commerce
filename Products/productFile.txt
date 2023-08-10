@@ -3,135 +3,133 @@ Nike Dunk Low Retro
 110.99
 Example Description
 Nike
-10.5
+null
 Black & White
 1000
-Example Image
-
+Products\\productImages\\101.jpg
 102
 Nike Air Force 1 Low '07
 100.99
 Example Description
 Nike
-9
+null
 White
 1050
-Example Image
-
+Products\\productImages\\102.jpg
 103
 Jordan 1 Retro High OG
 110.99
 Example Description
 Jordan
-11.5
+null
 Red & White
 1500
-Example Image
-
+Products\\productImages\\103.jpg
 104
 Crocs Pollex Clog
 79.99
 Example Description
 Crocs
+null
 Horchata
 500
-Example Image
-
+Products\\productImages\\104.jpg
 105
 New Balance 550
 109.99
 Example Description
 New Balance
+null
 White & Grey
 2000
-Example Image
-
+Products\\productImages\\105.jpg
 106
 Jordan 4 Retro
 119.99
 Example Description
 Jordan
+null
 Yellow & Black
 1000
-Example Image
-
+Products\\productImages\\106.jpg
 107
 Jordan 3 Retro
 119.99
 Example Description
 Jordan
+null
 White Cement
 800
-Example Image
-
+Products\\productImages\\107.jpg
 108
 Nike Air Max 1 '86 OG
 109.99
 Example Description
 Nike
+null
 Red, Grey, & Black
 700
-Example Image
-
+Products\\productImages\\108.jpg
 109
 Adidas Yeezy Slide
 79.99
 Example Description
 Adidas
+null
 Black
 500
-Example Image
-
+Products\\productImages\\109.jpg
 110
 Nike Air Force 1 Low
 150.99
 Example Description
 Nike
+null
 Black & Blue
 1000
-Example Image
-
+Products\\productImages\\110.jpg
 111
 Saint Laurent Court Classic SL/06 Low
 199.99
 Example Description
 Saint Laurent
+null
 Cream
 200
-Example Image
-
+Products\\productImages\\111.jpg
 112
 Jordan 11 Retro
 119.99
 Example Description
 Jordan
+null
 White & Red
 1500
-Example Image
-
+Products\\productImages\\112.jpg
 113
 Converse Chuck Taylor All-Star 70 Hi
 99.99
 Example Description
 Converse
+null
 White & Purple
 700
-Example Image
-
+Products\\productImages\\113.jpg
 114
 Adidas Samba OG
 109.99
 Example Description
 Adidas
+null
 White & Black
 1500
-Example Image
-
+Products\\productImages\\114.jpg
 115
 Jordan 4 Retro
 199.99
 Example Description
 Jordan
+null
 Violet Ore
 100
-Example Image
+Products\\productImages\\115.jpg
