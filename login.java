@@ -12,13 +12,13 @@ public class login extends JFrame {
 
     public void loginScreen() {
         JPanel panel = new JPanel(new GridBagLayout()); 
-        panel.setBackground(Color.BLACK); // Set background color to black
+        panel.setBackground(AppTheme.black); // Set background color to black
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(15, 15, 15, 15); 
 
         // Display logo
-        ImageIcon logoIcon = new ImageIcon("Logo.png"); // Load the logo
-        logoLabel = new JLabel(logoIcon); 
+        //ImageIcon logoIcon = new ImageIcon("Logo.png"); // Load the logo
+        logoLabel = new JLabel(AppTheme.logo); 
         gbc.gridx = 0; // Column
         gbc.gridy = 0; // Row
         gbc.gridwidth = 2; // Span across 2 columns
@@ -34,7 +34,7 @@ public class login extends JFrame {
 
         // Display "username"
         usertext = new JLabel("Username");
-        usertext.setForeground(Color.RED); // Set text color to red
+        usertext.setForeground(AppTheme.red); // Set text color to red
         gbc.gridx = 0;
         gbc.gridy = 1;
         gbc.gridwidth = 1; // Reset gridwidth
@@ -48,21 +48,24 @@ public class login extends JFrame {
 
         // Display "password"
         passtext = new JLabel("Password");
-        passtext.setForeground(Color.RED); // Set text color to red
+        passtext.setForeground(AppTheme.red); // Set text color to red
+        passtext.setFont(AppTheme.smallFont);
         gbc.gridx = 0;
         gbc.gridy = 2;
         panel.add(passtext, gbc);
 
         // Display password text box
         passbox = new JPasswordField(20);
+        passbox.setFont(AppTheme.smallFont);
         gbc.gridx = 1;
         gbc.gridy = 2;
         panel.add(passbox, gbc);
 
         // Display logButton and functionality
         logButton = new JButton("Login");
-        logButton.setForeground(Color.RED);
-        logButton.setBackground(Color.BLACK);
+        logButton.setFont(AppTheme.smallFont);
+        logButton.setForeground(AppTheme.red);
+        logButton.setBackground(AppTheme.black);
         gbc.gridx = 0;
         gbc.gridy = 3;
         gbc.gridwidth = 2; // Spans across 2 columns
@@ -91,8 +94,9 @@ public class login extends JFrame {
 
         // Display regButton and functionality
         regButton = new JButton("Register");
-        regButton.setForeground(Color.RED);
-        regButton.setBackground(Color.BLACK);
+        regButton.setFont(AppTheme.smallFont);
+        regButton.setForeground(AppTheme.red);
+        regButton.setBackground(AppTheme.black);
         gbc.gridx = 0;
         gbc.gridy = 4;
         gbc.gridwidth = 2; // Spans across 2 columns

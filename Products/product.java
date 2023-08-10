@@ -8,8 +8,8 @@ public class Product {
 
     public void loadProducts(String fn) {
         //product variables
-        String productID, name, price, description, category, size, color, stockQuantity;
-        int numberOfProducts = 3;
+        String productID, name, price, description, category, size, color, stockQuantity, image;
+        int numberOfProducts = 15;
 
         try{
             Scanner inf = new Scanner(new File(fn));
@@ -24,12 +24,14 @@ public class Product {
                 size = inf.nextLine();
                 color = inf.nextLine();
                 stockQuantity = inf.nextLine();
-                productInfo info = new productInfo(productID, name, Double.parseDouble(price), description, category, size, color, stockQuantity);
+                image = inf.nextLine();
+                productInfo info = new productInfo(productID, name, Double.parseDouble(price), description, category, size, color, stockQuantity, image);
                 list.add(info);
             }
 
             inf.close();
-        }catch (Exception e){prt.printf("\n\tRead Error! %s", e);}
+        //}catch (Exception e){prt.printf("\n\tRead Error! %s", e);}
+        }catch (Exception e){e.printStackTrace();}
 
         print();
     }
@@ -44,6 +46,7 @@ public class Product {
             prt.println("Size: " + info.getSize());
             prt.println("Color: " + info.getColor());
             prt.println("Stock Quantity: " + info.getStockQuantity());
+            prt.println("Image: " + info.getImage());
             prt.println();
         }
     }
