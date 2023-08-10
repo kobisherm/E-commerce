@@ -8,12 +8,31 @@ public class Register extends JPanel {
 	private JTextField emailField;
 	private JPasswordField passwordField;
 	private JButton registerButton;
+	private JButton loginButton;
+	private JLabel storeLogoLabel;
 
 	void register() {
 		// Initialization...
+
+		seyBackground(Color.BLACK);
+
 		emailField = new JTextField(20);
 		passwordField = new JPasswordField(20);
 		registerButton = new JButton("Register");
+		loginButton = new JButton("Login");
+
+		ImageIcon storeLogo = new ImageIcon("Logo.png");
+		storeLogoLabel = new JLabel(storeLogo);
+
+		emailField.setForeground(Color.WHITE);  // Text color
+		emailField.setBackground(Color.RED);    // Background color
+		passwordField.setForeground(Color.WHITE);
+		passwordField.setBackground(Color.RED);
+		registerButton.setForeground(Color.WHITE);
+		registerButton.setBackground(Color.RED);
+		loginButton.setForeground(Color.WHITE);
+		loginButton.setBackground(Color.RED);
+		
 
 		// Adding Components
 		add(new JLabel("Email:"));
@@ -21,6 +40,7 @@ public class Register extends JPanel {
 		add(new JLabel("Password:"));
 		add(passwordField);
 		add(registerButton);
+		add(loginButton);
 
 		// Adding event handler
 		registerButton.addActionListener(new ActionListener(){
@@ -40,6 +60,15 @@ public class Register extends JPanel {
 				{
 					JOptionPane.showMessageDialog(null, "Registration Failed!");
 				}
+			}
+		});
+
+		loginButton.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e)
+			{
+				
+				login loginPage = new login();
+				loginPage.loginScreen();
 			}
 		});
 	}
