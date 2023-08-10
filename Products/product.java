@@ -2,7 +2,7 @@ package Products;
 import java.util.*;
 import java.io.*;
 
-public class Product {
+public class product {
     ArrayList <productInfo> list = new ArrayList<productInfo>();
     PrintStream prt = System.out;
 

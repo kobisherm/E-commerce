@@ -11,19 +11,6 @@ public class productInfo {
     private String color;
     private String stockQuantity;
 
-    //temp constructor
-    public productInfo()
-    {
-        this.productID = "";
-        this.name = "";
-        this.price = 0.00;
-        this.description = "";
-        this.category = "";
-        this.size = "";
-        this.color = "";
-        this.stockQuantity = "";
-    }
-
     public productInfo(String productID, String name, double price, String description, String category, String size, String color, String stockQuantity) {
         this.productID = productID;
         this.name = name;
