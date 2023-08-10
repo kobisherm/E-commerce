@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Register extends JPanel {
+public class Register extends JFrame {
 	private JTextField emailField;
 	private JPasswordField passwordField;
 	private JButton registerButton;
@@ -55,5 +55,7 @@ public class Register extends JPanel {
 				loginPage.loginScreen();
 			}
 		});
+
+		setVisible(true);
 	}
 }
