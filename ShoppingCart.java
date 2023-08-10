@@ -65,7 +65,7 @@ public class ShoppingCart extends JFrame {
     }
 
     private void addProductToCart() {
-        productInfo product = new productInfo(); //"Sample Product", 9.99);
+        productInfo product = new productInfo();
         addItem(product);
         cartListModel.addElement(product);
         updateTotalPriceLabel();

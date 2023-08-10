@@ -1,24 +1,135 @@
-105
-Nike Dunks
+101
+Nike Dunk Low Retro
 110.99
 Example Description
-Example Category
-10.5
-Red
-100
-112
-Nike Air Force 1's
+Nike
+null
+Black & White
+1000
+Products\\productImages\\101.jpg
+102
+Nike Air Force 1 Low '07
 100.99
 Example Description
-Example Category
-9
+Nike
+null
 White
-115
-120
-Jordan 1's
+1050
+Products\\productImages\\102.jpg
+103
+Jordan 1 Retro High OG
 110.99
 Example Description
-Example Category
-11.5
+Jordan
+null
 Red & White
-150
+1500
+Products\\productImages\\103.jpg
+104
+Crocs Pollex Clog
+79.99
+Example Description
+Crocs
+null
+Horchata
+500
+Products\\productImages\\104.jpg
+105
+New Balance 550
+109.99
+Example Description
+New Balance
+null
+White & Grey
+2000
+Products\\productImages\\105.jpg
+106
+Jordan 4 Retro
+119.99
+Example Description
+Jordan
+null
+Yellow & Black
+1000
+Products\\productImages\\106.jpg
+107
+Jordan 3 Retro
+119.99
+Example Description
+Jordan
+null
+White Cement
+800
+Products\\productImages\\107.jpg
+108
+Nike Air Max 1 '86 OG
+109.99
+Example Description
+Nike
+null
+Red, Grey, & Black
+700
+Products\\productImages\\108.jpg
+109
+Adidas Yeezy Slide
+79.99
+Example Description
+Adidas
+null
+Black
+500
+Products\\productImages\\109.jpg
+110
+Nike Air Force 1 Low
+150.99
+Example Description
+Nike
+null
+Black & Blue
+1000
+Products\\productImages\\110.jpg
+111
+Saint Laurent Court Classic SL/06 Low
+199.99
+Example Description
+Saint Laurent
+null
+Cream
+200
+Products\\productImages\\111.jpg
+112
+Jordan 11 Retro
+119.99
+Example Description
+Jordan
+null
+White & Red
+1500
+Products\\productImages\\112.jpg
+113
+Converse Chuck Taylor All-Star 70 Hi
+99.99
+Example Description
+Converse
+null
+White & Purple
+700
+Products\\productImages\\113.jpg
+114
+Adidas Samba OG
+109.99
+Example Description
+Adidas
+null
+White & Black
+1500
+Products\\productImages\\114.jpg
+115
+Jordan 4 Retro
+199.99
+Example Description
+Jordan
+null
+Violet Ore
+100
+Products\\productImages\\115.jpg

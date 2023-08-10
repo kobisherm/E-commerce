@@ -10,21 +10,9 @@ public class productInfo {
     private String size;
     private String color;
     private String stockQuantity;
+    private String image;
 
-    //temp constructor
-    public productInfo()
-    {
-        this.productID = "";
-        this.name = "";
-        this.price = 0.00;
-        this.description = "";
-        this.category = "";
-        this.size = "";
-        this.color = "";
-        this.stockQuantity = "";
-    }
-
-    public productInfo(String productID, String name, double price, String description, String category, String size, String color, String stockQuantity) {
+    public productInfo(String productID, String name, double price, String description, String category, String size, String color, String stockQuantity, String image) {
         this.productID = productID;
         this.name = name;
         this.price = price;
@@ -33,6 +21,7 @@ public class productInfo {
         this.size = size;
         this.color = color;
         this.stockQuantity = stockQuantity;
+        this.image = image;
     }
 
     public String getProductID() {
@@ -65,5 +54,9 @@ public class productInfo {
 
     public String getStockQuantity() {
         return stockQuantity;
+    }
+
+    public String getImage() {
+        return image;
     }
 }
