@@ -81,7 +81,7 @@ public class Register extends JFrame {
 			public void actionPerformed(ActionEvent e)
 			{
 				dispose();
-				login loginPage = new login();
+				Login loginPage = new Login();
 				loginPage.loginScreen();
 			}
 		});

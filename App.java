@@ -18,7 +18,7 @@ public class App {
         //call and read users
 
         //call classes here
-        login L = new login();
+        Login L = new Login();
         L.loginScreen();
     }
 }
