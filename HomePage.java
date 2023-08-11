@@ -15,7 +15,7 @@ import javax.swing.border.EmptyBorder;
 
 public class HomePage extends JFrame{
 	JButton searchButton;
-	
+	public ShoppingCart cart = new ShoppingCart();
 	//Instead of display homepage
 	void DisplayHomePage()
 	{
@@ -96,6 +96,7 @@ public class HomePage extends JFrame{
 	
 	public void onCartClick()
 	{
+		cart.Shopping_Cart();
 		System.out.println("going to cart page");
 	}
 

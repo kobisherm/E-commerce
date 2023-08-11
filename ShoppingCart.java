@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import Products.*;
 
-public class ShoppingCart extends JFrame {
+public class ShoppingCart {//extends JFrame {
 
     private ArrayList<productInfo> items;
     private double totalPrice;
@@ -13,8 +13,9 @@ public class ShoppingCart extends JFrame {
     private DefaultListModel<productInfo> cartListModel;
     private JList<productInfo> cartList;
     private JLabel totalPriceLabel;
-
-    public ShoppingCart() {
+    public JFrame frame = new JFrame();
+    
+    public void Shopping_Cart() {
         items = new ArrayList<>();
         totalPrice = 0.0;
 
@@ -43,15 +44,16 @@ public class ShoppingCart extends JFrame {
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.add(new JScrollPane(cartList), BorderLayout.CENTER);
         mainPanel.add(totalPriceLabel, BorderLayout.SOUTH);
+        
+        
+        frame.add(mainPanel, BorderLayout.CENTER);
+        frame.add(buttonPanel, BorderLayout.SOUTH);
 
-        add(mainPanel, BorderLayout.CENTER);
-        add(buttonPanel, BorderLayout.SOUTH);
-
-        setTitle("Shopping Cart");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(400, 300);
-        setLocationRelativeTo(null);
-        setVisible(true);
+        frame.setTitle("Shopping Cart");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setSize(400, 300);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
     }
 
     public void addItem(productInfo item) {
@@ -65,7 +67,7 @@ public class ShoppingCart extends JFrame {
     }
 
     private void addProductToCart() {
-        productInfo product = new productInfo();
+        productInfo product = new productInfo(); //"Sample Product", 9.99);
         addItem(product);
         cartListModel.addElement(product);
         updateTotalPriceLabel();
