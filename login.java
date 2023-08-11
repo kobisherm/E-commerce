@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class login extends JFrame {
+public class Login extends JFrame {
     private static JLabel passtext, usertext;
     private static JTextField userbox;
     private static JPasswordField passbox;
