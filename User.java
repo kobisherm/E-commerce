@@ -62,7 +62,7 @@ public class User {
 					return true;
 				}
 			}
-		} catch (IOExceptoin e){
+		} catch (IOException e){
 			System.out.println("Error reading users.txt file");
 			e.printStackTrace();
 		}

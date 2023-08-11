@@ -3,7 +3,7 @@ import java.util.*;
 import java.io.*;
 
 public class Product {
-    ArrayList <productInfo> list = new ArrayList<productInfo>();
+    public static ArrayList <productInfo> allProducts = new ArrayList<productInfo>();
     PrintStream prt = System.out;
 
     public void loadProducts(String fn) {
@@ -26,7 +26,7 @@ public class Product {
                 stockQuantity = inf.nextLine();
                 image = inf.nextLine();
                 productInfo info = new productInfo(productID, name, Double.parseDouble(price), description, category, size, color, stockQuantity, image);
-                list.add(info);
+                allProducts.add(info);
             }
 
             inf.close();
@@ -37,7 +37,7 @@ public class Product {
     }
 
     void print() {
-        for (productInfo info : list) {
+        for (productInfo info : allProducts) {
             prt.println("Product ID: " + info.getProductID());
             prt.println("Name: " + info.getName());
             prt.println("Price: " + info.getPrice());
