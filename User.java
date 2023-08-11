@@ -29,6 +29,8 @@ public class User {
 
 		try {
 			FileWriter writer = new FileWriter("users.txt", true);
+			File file = new File("users.txt");
+			System.out.println("File is located at: " + file.getAbsolutePath());
 			BufferedWriter bufferedWriter = new BufferedWriter(writer);
 
 			bufferedWriter.write(userID + "," + email + "," + password);
@@ -45,9 +47,25 @@ public class User {
 	}
 	
 	//Allows a registered user to login
-	public void login()
+	public boolean login()
 	{
-		
+		String line;
+		String search = this.email + "," + this.password;
+
+		try (BufferedReader br = new BufferedReader(new FileReader("users.txt"))){
+			while((line = br.readLine()) != null){
+				if(line.contains(search)){
+					//Found match!
+					return true;
+				}
+			}
+		} catch (IOExceptoin e){
+			System.out.println("Error reading users.txt file");
+			e.printStackTrace();
+		}
+
+
+		return false;
 	}
 	
 	//Logs out the currently logged-in user
