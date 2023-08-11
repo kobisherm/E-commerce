@@ -1,4 +1,5 @@
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -30,5 +31,12 @@ public final class AppTheme {
 		btn.setPreferredSize(size);
 		btn.setFocusable(false);
 		return btn;
+	}
+
+	public static ImageIcon scaleImage(ImageIcon image, float scale)
+	{
+		int width = (int)(image.getIconWidth() * scale);
+		int height = (int)(image.getIconHeight() * scale);
+		return new ImageIcon(image.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH));
 	}
 }

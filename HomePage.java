@@ -1,8 +1,10 @@
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -13,10 +15,13 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import Products.*;
+
 public class HomePage extends JFrame{
 	JButton searchButton;
 	public ShoppingCart cart = new ShoppingCart();
-	//Instead of display homepage
+	int page = 0;
+
 	void DisplayHomePage()
 	{
 		final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -69,7 +74,7 @@ public class HomePage extends JFrame{
 		JLabel appTitle = new JLabel(" HI-LO");
 		appTitle.setFont(AppTheme.titleFont);
 		appTitle.setForeground(AppTheme.white);
-		appTitle.setIcon(new ImageIcon(AppTheme.logo.getImage().getScaledInstance(125, 125, Image.SCALE_SMOOTH)));
+		appTitle.setIcon(AppTheme.scaleImage(AppTheme.logo, 0.3255f));
 		appTitle.setBorder(new EmptyBorder(0, 10, 0, 0));
 		
 		add(topBar);
@@ -80,14 +85,34 @@ public class HomePage extends JFrame{
 		topBar.add(myCartButton);
 		topBar.add(checkoutButton);
 		topBar.add(LogOutButton);
-		
+		 
 		add(appLogoBar);
 		appLogoBar.add(appTitle);
 		
+		JPanel itemsPanel = new JPanel(new GridLayout(3, 3 ,10, 10));
+		displayItems(Product.allProducts, itemsPanel);
+		add(itemsPanel);
+
 		setResizable(false);
 		setVisible(true);
 	}
 	
+	void displayItems(ArrayList <productInfo> productsList, JPanel panel)
+	{
+		for(int i = 9 * page; i < (9 * page) + 9; i++)
+		{
+			if(i >= productsList.size()) return;
+
+			productInfo item = productsList.get(i);
+
+			ImageIcon image = new ImageIcon(item.getImage());
+			image = AppTheme.scaleImage(image, 0.1f);
+			JButton display = new JButton(item.getName(), image);
+
+			panel.add(display);
+		}
+	}
+
 	// *********************** BUTTON EVENTS **************************************
 	public void onSearchClick()
 	{
@@ -107,6 +132,8 @@ public class HomePage extends JFrame{
 	
 	public void onLogoutClick()
 	{
-		System.out.println("Log out");
+		Login login = new Login();
+		login.loginScreen();
+		dispose();
 	}
 }
