@@ -33,10 +33,20 @@ public final class AppTheme {
 		return btn;
 	}
 
+	public static JButton createStandardButton(String text)
+	{
+		JButton btn = new JButton(text);
+		btn.setFont(AppTheme.mainFont);
+		btn.setBackground(AppTheme.gray);
+		btn.setForeground(AppTheme.black);
+		btn.setFocusable(false);
+		return btn;
+	}
+
 	public static ImageIcon scaleImage(ImageIcon image, float scale)
 	{
-		int width = (int)(image.getIconWidth() * scale);
-		int height = (int)(image.getIconHeight() * scale);
+		int width = 1 + (int)(image.getIconWidth() * scale);
+		int height = 1 + (int)(image.getIconHeight() * scale);
 		return new ImageIcon(image.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH));
 	}
 }
