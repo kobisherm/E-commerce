@@ -2,7 +2,6 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
-import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 
@@ -19,6 +18,7 @@ import Products.*;
 
 public class HomePage extends JFrame{
 	JButton searchButton;
+	JPanel itemsPanel;
 	public ShoppingCart cart = new ShoppingCart();
 	int page = 0;
 
@@ -89,9 +89,21 @@ public class HomePage extends JFrame{
 		add(appLogoBar);
 		appLogoBar.add(appTitle);
 		
-		JPanel itemsPanel = new JPanel(new GridLayout(3, 3 ,10, 10));
+		itemsPanel = new JPanel(new GridLayout(3, 3 ,10, 10));
+		itemsPanel.setPreferredSize(new Dimension((int)screenSize.getWidth(), 500));
 		displayItems(Product.allProducts, itemsPanel);
 		add(itemsPanel);
+
+		JPanel navigationPanel = new JPanel();
+		add(navigationPanel);
+
+		navigationPanel.setPreferredSize(new Dimension((int)screenSize.getWidth(), 40));
+		JButton previousPageBtn = AppTheme.createStandardButton("Back");
+		previousPageBtn.addActionListener(x -> PreviousPage());
+		navigationPanel.add(previousPageBtn);
+		JButton nextPageBtn = AppTheme.createStandardButton("Next");
+		nextPageBtn.addActionListener(x -> NextPage());
+		navigationPanel.add(nextPageBtn);
 
 		setResizable(false);
 		setVisible(true);
@@ -99,9 +111,19 @@ public class HomePage extends JFrame{
 	
 	void displayItems(ArrayList <productInfo> productsList, JPanel panel)
 	{
-		for(int i = 9 * page; i < (9 * page) + 9; i++)
+		if(page < 0) page = 0;
+
+		int firstProductIndex = 9 * page;
+		if(firstProductIndex >= productsList.size()) page -= 1;
+
+		for(int i = firstProductIndex; i < firstProductIndex + 9; i++)
 		{
-			if(i >= productsList.size()) return;
+			if(i >= productsList.size())
+			{
+				//no more items, empty cell
+				panel.add(new JLabel());
+				continue;
+			}
 
 			productInfo item = productsList.get(i);
 
@@ -111,6 +133,14 @@ public class HomePage extends JFrame{
 
 			panel.add(display);
 		}
+	}
+
+	void RefreshItems()
+	{
+		itemsPanel.removeAll();
+		displayItems(Product.allProducts, itemsPanel);
+		itemsPanel.revalidate();
+		itemsPanel.repaint();
 	}
 
 	// *********************** BUTTON EVENTS **************************************
@@ -135,5 +165,17 @@ public class HomePage extends JFrame{
 		Login login = new Login();
 		login.loginScreen();
 		dispose();
+	}
+
+	public void NextPage()
+	{
+		page += 1;
+		RefreshItems();
+	}
+
+	public void PreviousPage()
+	{
+		page -= 1;
+		RefreshItems();
 	}
 }
