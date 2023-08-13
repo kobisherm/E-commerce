@@ -24,8 +24,9 @@ public class HomePage extends JFrame{
 
 	void DisplayHomePage()
 	{
+		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		
+
 		setTitle("Home page");
 		setSize(screenSize);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -129,7 +130,19 @@ public class HomePage extends JFrame{
 
 			ImageIcon image = new ImageIcon(item.getImage());
 			image = AppTheme.scaleImage(image, 0.1f);
-			JButton display = new JButton(item.getName(), image);
+			JButton display = new JButton(image);
+
+			String itemName = "<b>" + item.getName().toUpperCase() + "</b><br>";
+			String price = "$" + item.getPrice() + "<br>";
+			String category = "Category: " + item.getCategory() + "<br>";
+			String description = item.getDescription() + "<br>";
+			String quantity = item.getStockQuantity() + " in stock";
+
+			display.setText("<html>" + itemName + price + category + description + quantity + "</html>");
+
+			display.setFont(AppTheme.smallFont);
+			display.setHorizontalAlignment(JButton.LEFT);
+			display.setHorizontalTextPosition(JButton.RIGHT);
 
 			panel.add(display);
 		}
