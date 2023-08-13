@@ -12,6 +12,10 @@ public class productInfo {
     private String stockQuantity;
     private String image;
 
+     public void setStockQuantity(String stockQuantity) {
+        this.stockQuantity = stockQuantity;
+    }
+    
     public productInfo(String productID, String name, double price, String description, String category, String size, String color, String stockQuantity, String image) {
         this.productID = productID;
         this.name = name;
