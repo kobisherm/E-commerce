@@ -76,7 +76,10 @@ public class Login extends JFrame {
             String Username = userbox.getText();
             String Password = new String(passbox.getPassword());
 
-            if (Username.equals("batman") && Password.equals("123")){
+            User currentUser = new User(Username, Password);
+            boolean isUserValid = currentUser.login();
+
+            if (isUserValid){
                 //JOptionPane.showMessageDialog(null, "Login Successful");
                 //opens Homepage class
                 HomePage H = new HomePage();
