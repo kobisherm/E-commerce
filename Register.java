@@ -9,52 +9,63 @@ public class Register extends JFrame {
 	private JPasswordField passwordField;
 	private JButton registerButton;
 	private JButton loginButton;
-	//private JLabel storeLogoLabel;
+	private JLabel logoLabel;
 
 	void register() {
 	
 		setTitle("Register");
-        setSize(400, 250); 
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 
-        getContentPane().setBackground(Color.BLACK);
+        JPanel panel = new JPanel(new GridBagLayout());
+        panel.setBackground(AppTheme.black); // Using AppTheme colors
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(15, 15, 15, 15);
+
+        // Adding the logo
+        logoLabel = new JLabel(AppTheme.logo);
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.gridwidth = 2; 
+        panel.add(logoLabel, gbc);
+
+        JLabel emailLabel = new JLabel("Email:");
+        emailLabel.setForeground(AppTheme.red); // Using AppTheme colors
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.gridwidth = 1;
+        panel.add(emailLabel, gbc);
 
         emailField = new JTextField(20);
-        passwordField = new JPasswordField(20);
-        registerButton = new JButton("Register");
-        registerButton.setForeground(Color.RED);
-        loginButton = new JButton("Login");
-        loginButton.setForeground(Color.RED);
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        panel.add(emailField, gbc);
 
-        JPanel emailPanel = createPanel();
-        
-        JLabel emailLabel = new JLabel("Email:");
-        emailLabel.setForeground(Color.RED);
-        
-        
-        emailPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-        emailPanel.add(emailLabel);
-        emailPanel.add(emailField);
-        
         JLabel passwordLabel = new JLabel("Password:");
-        passwordLabel.setForeground(Color.RED);
-        
-        JPanel passwordPanel = createPanel();
-        passwordPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-        passwordPanel.add(passwordLabel);
-        passwordPanel.add(passwordField);
+        passwordLabel.setForeground(AppTheme.red); // Using AppTheme colors
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        panel.add(passwordLabel, gbc);
 
-        JPanel buttonPanel = createPanel();
-        buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-        buttonPanel.add(registerButton);
-        buttonPanel.add(loginButton);
+        passwordField = new JPasswordField(20);
+        gbc.gridx = 1;
+        gbc.gridy = 2;
+        panel.add(passwordField, gbc);
 
-        add(emailPanel);
-        add(passwordPanel);
-        add(buttonPanel);
+        registerButton = new JButton("Register");
+        registerButton.setForeground(AppTheme.red);
+        registerButton.setBackground(AppTheme.black);
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        gbc.gridwidth = 1;
+        panel.add(registerButton, gbc);
 
+        loginButton = new JButton("Go to Login page");
+        loginButton.setForeground(AppTheme.red);
+        loginButton.setBackground(AppTheme.black);
+        gbc.gridx = 1;
+        gbc.gridy = 3;
+        panel.add(loginButton, gbc);
+
+        add(panel);
 		// Adding event handler
 		registerButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e)
@@ -86,24 +97,11 @@ public class Register extends JFrame {
 			}
 		});
 
-		setVisible(true);
+		 setSize(new Dimension(700, 700));
+	     setLocationRelativeTo(null);
+	     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	     setVisible(true);
 	}
-	
-	private JPanel createPanel() {
-        JPanel panel = new JPanel();
-        panel.setLayout(new FlowLayout(FlowLayout.CENTER));
-        panel.setBackground(Color.BLACK);
-        for (Component c : panel.getComponents()) {
-            if (c instanceof JLabel) {
-                c.setForeground(Color.WHITE);
-            }
-            if (c instanceof JTextField || c instanceof JPasswordField) {
-                c.setForeground(Color.BLACK);
-                c.setBackground(Color.WHITE);
-            }
-        }
-        return panel;
-    }
 	
 	
 	
