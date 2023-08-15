@@ -19,22 +19,22 @@ public class ShoppingCart {
     private double totalPrice; // total prices of all items
 
     private DefaultListModel<productInfo> cartListModel; // a model to display the items in the cart
-    private JList<productInfo> cartList;
+    private JList<productInfo> cartList; 
     private JLabel totalPriceLabel;
     public JFrame frame = new JFrame();
 
     /**
      * A constructor to make the shopping cart and create the GUI elements.
      */
-    public ShoppingCart() {
-        items = new ArrayList<>();
-        totalPrice = 0.0;
+    public ShoppingCart() { //Constructor to start the shopping cart
+        items = new ArrayList<>(); // create the list of items for the shopping cart
+        totalPrice = 0.0; //initial price
 
-        cartListModel = new DefaultListModel<>();
-        cartList = new JList<>();
-        totalPriceLabel = new JLabel("Total Price: $0.00");
+        cartListModel = new DefaultListModel<>(); //create a new list mode
+        cartList = new JList<>();// create a jlist component
+        totalPriceLabel = new JLabel("Total Price: $0.00"); //makes the total price label
 
-        JButton addButton = new JButton("Add to Cart");
+        JButton addButton = new JButton("Add to Cart"); //creates add to cart button
         addButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 addProductToCart();
