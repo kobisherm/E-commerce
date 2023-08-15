@@ -41,7 +41,7 @@ public class ShoppingCart {
             }
         });
 
-        JButton removeButton = new JButton("Remove from Cart");
+        JButton removeButton = new JButton("Remove from Cart");//creates remove from cart button
         removeButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 removeProductFromCart();
