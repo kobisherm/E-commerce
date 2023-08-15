@@ -7,13 +7,14 @@ import Products.*;
 
 public class ShoppingCart {//extends JFrame {
 
-    private ArrayList<productInfo> items;
-    private double totalPrice;
+    private ArrayList<productInfo> items; // hold items in shopping cart
+    private double totalPrice; // total prices of all items
 
-    private DefaultListModel<productInfo> cartListModel;
+    private DefaultListModel<productInfo> cartListModel; // a model to display the items in the cart
     private JList<productInfo> cartList;
     private JLabel totalPriceLabel;
     public JFrame frame = new JFrame();
+    
     
     public void Shopping_Cart() {
         items = new ArrayList<>();

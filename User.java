@@ -6,7 +6,18 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.File;
 
-//comment
+/**
+ * @author Davit Sargsyan
+ * 
+ * User class represents a user in the application
+ * <p>
+ * This class is responsible for managing user's information
+ * and interacting with the user's shopping cart.
+ * </p>
+ * 
+ */
+
+
 public class User {
 	private String userID;
 	private String email;
@@ -14,7 +25,6 @@ public class User {
 	private boolean isRegistered;
 	private ShoppingCart cart;
 	
-	// Constructor
 	public User(String email, String password)
 	{
 		this.userID = userID;
