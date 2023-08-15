@@ -1,3 +1,4 @@
+import Products.Product;
 import Products.productInfo;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,7 +10,7 @@ public class Store
 
     public Store() 
     {
-        productList = new ArrayList<>();//list of products
+        productList = Product.allProducts;//new ArrayList<>();//list of products
         userDatabase = new HashMap<>(); //hashamp of userdatabase
     }
 
