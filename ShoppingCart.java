@@ -48,19 +48,19 @@ public class ShoppingCart {
             }
         });
 
-        JPanel buttonPanel = new JPanel();
+        JPanel buttonPanel = new JPanel(); //creates a panel for the buttons
         buttonPanel.add(addButton);
         buttonPanel.add(removeButton);
 
-        JPanel mainPanel = new JPanel(new BorderLayout());
+        JPanel mainPanel = new JPanel(new BorderLayout()); //creates the main panel showing scrollable list and total price label
         mainPanel.add(new JScrollPane(cartList), BorderLayout.CENTER);
         mainPanel.add(totalPriceLabel, BorderLayout.SOUTH);
 
-        frame.add(mainPanel, BorderLayout.CENTER);
+        frame.add(mainPanel, BorderLayout.CENTER); //add the main button paannel to the frame
         frame.add(buttonPanel, BorderLayout.SOUTH);
 
         frame.setTitle("Shopping Cart");
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //close window
         frame.setSize(400, 300);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
@@ -72,18 +72,18 @@ public class ShoppingCart {
      * Adds an item to the shopping cart and updates the total price.
      * @param item The item to be added to the cart.
      */
-    public void addItem(productInfo item) {
-        items.add(item);
-        totalPrice += item.getPrice();
+    public void addItem(productInfo item) { //function to add item to cart
+        items.add(item); //add item to list
+        totalPrice += item.getPrice();//update price
     }
 
     /**
      * Removes an item from the shopping cart and updates the total price.
      * @param item The item to be removed from the cart.
      */
-    public void removeItem(productInfo item) {
-        items.remove(item);
-        totalPrice -= item.getPrice();
+    public void removeItem(productInfo item) { //function to remove item from cart
+        items.remove(item); //remove item
+        totalPrice -= item.getPrice(); //update price
     }
 
     /**
