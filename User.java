@@ -135,9 +135,10 @@ public class User {
 	 * 
 	 * void logout()
 	 * <p>
-	 * This method logs out the current user
+	 * This method logs out the current user, clears session data
+	 * and redirects the user to login page.
 	 * </p>
-	 * @return true if registration was successful, otherwise false
+	 * @return nothing
 	 * 
 	 */
 	public void logout()
@@ -147,19 +148,54 @@ public class User {
 	    this.isRegistered = false;
 	}
 	
-	//Adds an item to the user's shopping cart
+	
+	/**
+	 * @author Davit Sargsyan
+	 * @since 1.0 (2023-07)
+	 * 
+	 * void addToCart()
+	 * <p>
+	* This function should add items to the user's cart
+	 * This function is not implemented yet
+	 * </p>
+	 * @return nothing as of now
+	 * 
+	 */
 	public void addToCart()
 	{
 		
 	}
 	
-	//Removes an item from the user's shopping cart
+	
+	/**
+	 * @author Davit Sargsyan
+	 * @since 1.0 (2023-07)
+	 * 
+	 * void removeFromCart()
+	 * <p>
+	 * This function should remove items from the user's cart
+	 * This function is not implemented yet
+	 * </p>
+	 * @return nothing as of now
+	 * 
+	 */
 	public void removeFromCart()
 	{
 		
 	}
 	
-	//Processes the purchase from the user's cart
+	
+	/**
+	 * @author Davit Sargsyan
+	 * @since 1.0 (2023-07)
+	 * 
+	 * void checkout()
+	 * <p>
+	 * This function should let the current user check out.
+	 * This function is not implemented yet
+	 * </p>
+	 * @return nothing as of now
+	 */
 	public void checkout()
 	{
 		
