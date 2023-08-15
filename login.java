@@ -2,15 +2,47 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+/**
+ * Class Name: Login.java
+ * Date:
+ * @author Armon Lee
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+ * Description: This class should give the users the option 
+ * to login with an existing account or register for a new 
+ * account. As well as, take them to the homepage if logged 
+ * in with correct username and password, take them to 
+ * registration page if a new user, and lastly notify 
+ * them if the username or password they entered was incorrect.
+ *  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Methods: 
+ * loginScreen() - displays login screen, including text and 
+ * input text boxes for the user. In addition, the class contains
+ * an if else statement to direct users to direct users according
+ * to their inputs.
+ *    - if user has account & inputs correct login then it will
+ *      take them to home screen
+ *    - if user has account & inputs incorrect login then an 
+ *      incorrect password message will pop up
+ *    - if user has no account then they can register for one
+ */
+
 public class Login extends JFrame {
+    /**
+     * Important Variables:
+     * passtext, usertext - display "password" and "username" on screen
+     * userbox - display box for user to input username
+     * passbox - display box for user to input password, hides characters
+     * logoLabel - displays logo
+     */
     private static JLabel passtext, usertext;
     private static JTextField userbox;
     private static JPasswordField passbox;
-    private static JButton logButton;
-    private static JButton regButton;
+    private static JButton loginButton;
+    private static JButton registerButton;
     private static JLabel logoLabel;
 
     public void loginScreen() {
+        
         JPanel panel = new JPanel(new GridBagLayout()); 
         panel.setBackground(AppTheme.black); // Set background color to black
         GridBagConstraints gbc = new GridBagConstraints();
@@ -62,15 +94,15 @@ public class Login extends JFrame {
         panel.add(passbox, gbc);
 
         // Display logButton and functionality
-        logButton = new JButton("Login");
-        logButton.setFont(AppTheme.smallFont);
-        logButton.setForeground(AppTheme.red);
-        logButton.setBackground(AppTheme.black);
+        loginButton = new JButton("Login");
+        loginButton.setFont(AppTheme.smallFont);
+        loginButton.setForeground(AppTheme.red);
+        loginButton.setBackground(AppTheme.black);
         gbc.gridx = 0;
         gbc.gridy = 3;
         gbc.gridwidth = 2; // Spans across 2 columns
         gbc.fill = GridBagConstraints.HORIZONTAL; // Button grows to fill space horizontally
-        logButton.addActionListener(new ActionListener() {
+        loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent event) {
             String Username = userbox.getText();
@@ -92,19 +124,19 @@ public class Login extends JFrame {
                 JOptionPane.showMessageDialog(null, "Username or Password mismatch ");
             }
         });//Adds an ActionListener to the button and calls actionPerformed method
-        panel.add(logButton, gbc);
+        panel.add(loginButton, gbc);
         
 
         // Display regButton and functionality
-        regButton = new JButton("Register");
-        regButton.setFont(AppTheme.smallFont);
-        regButton.setForeground(AppTheme.red);
-        regButton.setBackground(AppTheme.black);
+        registerButton = new JButton("Register");
+        registerButton.setFont(AppTheme.smallFont);
+        registerButton.setForeground(AppTheme.red);
+        registerButton.setBackground(AppTheme.black);
         gbc.gridx = 0;
         gbc.gridy = 4;
         gbc.gridwidth = 2; // Spans across 2 columns
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        regButton.addActionListener(new ActionListener() {
+        registerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent event) {
                 //opens Homepage class
@@ -115,10 +147,7 @@ public class Login extends JFrame {
                 window.dispose();
             }
         });//Adds an ActionListener to the button and calls actionPerformed method
-        panel.add(regButton, gbc);
-
-        window.setVisible(true); //Make the window visible
-
+        panel.add(registerButton, gbc);
     }
 
     //username and password check
