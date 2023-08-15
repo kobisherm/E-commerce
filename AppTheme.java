@@ -6,10 +6,17 @@ import javax.swing.JButton;
 import java.awt.Dimension;
 
 /**
- * Utility class that contains graphics and color data to be used on various pages
+ * <p>
+ * Class/Module name: AppTheme
+ * @since 1.0 (2023-08)
  * @author Kobi Sherman
+ * Description:
+ * This is a utility class that contains graphics and color data to be used on various pages of the App
+ * The class contains various colors, Fonts, and Images that are used throughout the app
+ * </p>
  */
 public final class AppTheme {
+
     public static final Font titleFont = new Font("SansSerif", Font.BOLD, 30);
 	public static final Font mainFont = new Font("SansSerif", Font.PLAIN, 20);
 	public static final Font smallFont = new Font("SansSerif", Font.PLAIN, 12);
@@ -22,6 +29,18 @@ public final class AppTheme {
 
     public static final ImageIcon logo = new ImageIcon("Logo.png");
 
+/**
+ * <p>
+ * Class/Module name: AppTheme
+ * @since 1.0 (2023-08)
+ * @author Kobi Sherman
+ * Description:
+ * This function creates a JButton with a specific, consistance style that is used throught the app.
+ * @return a JButton that is formatted in a consistent, standard way. 
+ * @param text - The text displayed by the button
+ * @param size - The size of the JButton to be created
+ * </p>
+ */
     public static JButton createStandardButton(String text, Dimension size)
 	{
 		JButton btn = new JButton(text);
@@ -33,6 +52,16 @@ public final class AppTheme {
 		return btn;
 	}
 
+/**
+ * Class/Module name: AppTheme
+ * @since 1.0 (2023-08)
+ * @author Kobi Sherman
+ * Description:
+ * This function creates a JButton with a specific, consistance style that is used throught the app.
+ * Method overloading is used.
+ * @return a JButton that is formatted in a consistent, standard way. 
+ * @param text - The text displayed by the button
+ */
 	public static JButton createStandardButton(String text)
 	{
 		JButton btn = new JButton(text);
@@ -43,6 +72,16 @@ public final class AppTheme {
 		return btn;
 	}
 
+/**
+ * Class/Module name: AppTheme
+ * @since 1.0 (2023-08)
+ * @author Kobi Sherman
+ * Description:
+ * This function takes in an ImageIcon and returns a scaled version of it.
+ * @return an ImageIcon that is a scaled version of an original ImageIcon.
+ * @param image - the original unscaled image
+ * @param scale - a float multiplier to scale the image by
+ */
 	public static ImageIcon scaleImage(ImageIcon image, float scale)
 	{
 		int width = 1 + (int)(image.getIconWidth() * scale);

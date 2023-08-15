@@ -16,12 +16,36 @@ import javax.swing.border.EmptyBorder;
 
 import Products.*;
 
+/**
+ * <p>
+ * Class/Module name: HomePage
+ * @since 1.0 (2023-08)
+ * @author Kobi Sherman
+ * Description:
+ * This class represents the home page window that the user interacts with.
+ * The class contains and organizes the elements of the home page, 
+ * and it also links buttons to the actions they perform. 
+ * This class also supports page navigation to display the various products.
+ * </p>
+ */
 public class HomePage extends JFrame{
+	Store store = new Store();
+	ArrayList<productInfo> productsToDisplay;
+	
+	JTextField searchBarText;
 	JButton searchButton;
 	JPanel itemsPanel;
 	public ShoppingCart cart = new ShoppingCart();
 	int page = 0;
 
+/**
+ * Class/Module name: HomePage
+ * @since 1.0 (2023-08)
+ * @author Kobi Sherman
+ * Description:
+ * This function creates and sets the elements of the homePage instance.
+ * The home page is created using javax.swing and java.awt functionalities.
+ */
 	void DisplayHomePage()
 	{
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -44,7 +68,7 @@ public class HomePage extends JFrame{
 		homeLabel.setForeground(AppTheme.white);
 		homeLabel.setFocusable(true);
 		
-		JTextField searchBarText = new JTextField();
+		searchBarText = new JTextField();
 		searchBarText.setFont(AppTheme.mainFont);
 		searchBarText.setPreferredSize(new Dimension(200, 40));
 		searchBarText.setFocusable(true);
@@ -92,7 +116,7 @@ public class HomePage extends JFrame{
 		
 		itemsPanel = new JPanel(new GridLayout(3, 3 ,10, 10));
 		itemsPanel.setPreferredSize(new Dimension((int)screenSize.getWidth(), 500));
-		displayItems(Product.allProducts, itemsPanel);
+		displayItems(itemsPanel);
 		add(itemsPanel);
 
 		JPanel navigationPanel = new JPanel();
@@ -110,23 +134,33 @@ public class HomePage extends JFrame{
 		setVisible(true);
 	}
 	
-	void displayItems(ArrayList <productInfo> productsList, JPanel panel)
+/**
+ * Class/Module name: HomePage
+ * @since 1.0 (2023-08)
+ * @author Kobi Sherman
+ * Description:
+ * This function adds the appropriate items to the items panel, so that they are displayed
+ * in the homePage. This function depends on the current page. 
+ * @param producstList - The total list of filtered or unfiltered search results to display.
+ * @param panel - The target panel to contain the item displays.
+ */
+	void displayItems(JPanel panel)
 	{
 		if(page < 0) page = 0;
 
 		int firstProductIndex = 9 * page;
-		if(firstProductIndex >= productsList.size()) page -= 1;
+		if(firstProductIndex >= productsToDisplay.size()) page -= 1;
 
 		for(int i = firstProductIndex; i < firstProductIndex + 9; i++)
 		{
-			if(i >= productsList.size())
+			if(i >= productsToDisplay.size())
 			{
 				//no more items, empty cell
 				panel.add(new JLabel());
 				continue;
 			}
 
-			productInfo item = productsList.get(i);
+			productInfo item = productsToDisplay.get(i);
 
 			ImageIcon image = new ImageIcon(item.getImage());
 			image = AppTheme.scaleImage(image, 0.1f);
@@ -148,10 +182,18 @@ public class HomePage extends JFrame{
 		}
 	}
 
-	void RefreshItems()
+/**
+ * Class/Module name: HomePage
+ * @since 1.0 (2023-08)
+ * @author Kobi Sherman
+ * Description:
+ * This function redraws the home page, and is called after the current page is updated 
+ * to display the correct items. 
+ */
+	void refreshItems()
 	{
 		itemsPanel.removeAll();
-		displayItems(Product.allProducts, itemsPanel);
+		displayItems(itemsPanel);
 		itemsPanel.revalidate();
 		itemsPanel.repaint();
 	}
@@ -159,13 +201,17 @@ public class HomePage extends JFrame{
 	// *********************** BUTTON EVENTS **************************************
 	public void onSearchClick()
 	{
-		System.out.println("pressed");
+		String searchText = searchBarText.getText();
+		if(searchText == null || searchText.equals(""))
+			productsToDisplay = Product.allProducts;
+		else
+			productsToDisplay = store.searchProduct(searchText);
+		refreshItems();
 	}
 	
 	public void onCartClick()
 	{
 		cart.Shopping_Cart();
-		System.out.println("going to cart page");
 	}
 
 	public void onCheckoutClick()
@@ -183,12 +229,12 @@ public class HomePage extends JFrame{
 	public void NextPage()
 	{
 		page += 1;
-		RefreshItems();
+		refreshItems();
 	}
 
 	public void PreviousPage()
 	{
 		page -= 1;
-		RefreshItems();
+		refreshItems();
 	}
 }

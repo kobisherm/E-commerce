@@ -8,6 +8,7 @@ import java.io.File;
 
 /**
  * @author Davit Sargsyan
+ * @since 1.0 (2023-07)
  * 
  * User class represents a user in the application
  * <p>
@@ -18,6 +19,7 @@ import java.io.File;
  */
 
 
+//comment
 public class User {
 	private String userID;
 	private String email;
@@ -25,17 +27,48 @@ public class User {
 	private boolean isRegistered;
 	private ShoppingCart cart;
 	
+	/**
+	 * @author Davit Sargsyan
+	 * @since 1.0 (2023-07)
+	 * Constructor of User class constructs a new user with the
+	 * given email and password.
+	 * 
+	 * 
+	 * 
+	 */
+	
 	public User(String email, String password)
 	{
-		this.userID = userID;
 		this.email = email;
 		this.password = password;
+		/**
+		 * @param isRegistered : Indicates if the user is registered or not
+		 */
 		this.isRegistered = false; // Initially false, we will change this to true after a user registers succesfully
+		/**
+		 * @param cart : Represents the shopping cart if the user
+		 */
 		this.cart = new ShoppingCart();
 	}
 	
 	
-	//Registers a new user with the application
+	/**
+	 * @author Davit Sargsyan
+	 * @since 1.0 (2023-07)
+	 * 
+	 * boolean registerUser()
+	 * <p>
+	 * This method registers a new user by assigning them a unique ID,
+	 * an email provided by the user and password provided by the user
+	 * All the information gets written to a file named users.txt
+	 * which helps keep track of users + is essential for login functionality.
+	 * This function works with register class which represents the registration page
+	 * and takes care of all the GUI requirements of that page.
+	 * This function is called from within register class. 
+	 * </p>
+	 * @return true if registration was successful, otherwise false
+	 * 
+	 */
 	public boolean registerUser()
 	{
 		this.userID = UUID.randomUUID().toString();
@@ -60,7 +93,21 @@ public class User {
 		
 	}
 	
-	//Allows a registered user to login
+	
+	/**
+	 * @author Davit Sargsyan
+	 * @since 1.0 (2023-07)
+	 * 
+	 * boolean login()
+	 * <p>
+	 * This method logs a user in by reading the users.txt file
+	 * If the user exists they are prompted to the home page of our application.
+	 * Otherwise they are told that there is a user name or password mismatch.
+	 * This function works with login page class and is called from within that class. 
+	 * </p>
+	 * @return true if registration was successful, otherwise false
+	 * 
+	 */
 	public boolean login()
 	{
 		String line;
@@ -82,25 +129,73 @@ public class User {
 		return false;
 	}
 	
-	//Logs out the currently logged-in user
+	/**
+	 * @author Davit Sargsyan
+	 * @since 1.0 (2023-07)
+	 * 
+	 * void logout()
+	 * <p>
+	 * This method logs out the current user, clears session data
+	 * and redirects the user to login page.
+	 * </p>
+	 * @return nothing
+	 * 
+	 */
 	public void logout()
 	{
-		
+		this.email = null;
+	    this.password = null;
+	    this.isRegistered = false;
 	}
 	
-	//Adds an item to the user's shopping cart
+	
+	/**
+	 * @author Davit Sargsyan
+	 * @since 1.0 (2023-07)
+	 * 
+	 * void addToCart()
+	 * <p>
+	* This function should add items to the user's cart
+	 * This function is not implemented yet
+	 * </p>
+	 * @return nothing as of now
+	 * 
+	 */
 	public void addToCart()
 	{
 		
 	}
 	
-	//Removes an item from the user's shopping cart
+	
+	/**
+	 * @author Davit Sargsyan
+	 * @since 1.0 (2023-07)
+	 * 
+	 * void removeFromCart()
+	 * <p>
+	 * This function should remove items from the user's cart
+	 * This function is not implemented yet
+	 * </p>
+	 * @return nothing as of now
+	 * 
+	 */
 	public void removeFromCart()
 	{
 		
 	}
 	
-	//Processes the purchase from the user's cart
+	
+	/**
+	 * @author Davit Sargsyan
+	 * @since 1.0 (2023-07)
+	 * 
+	 * void checkout()
+	 * <p>
+	 * This function should let the current user check out.
+	 * This function is not implemented yet
+	 * </p>
+	 * @return nothing as of now
+	 */
 	public void checkout()
 	{
 		
