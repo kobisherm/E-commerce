@@ -15,8 +15,6 @@ import javax.swing.*;
  * registration page if a new user, and lastly notify 
  * them if the username or password they entered was incorrect.
  *  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * Methods: 
- * 
  */
 
 public class Login extends JFrame {
@@ -181,5 +179,7 @@ public class Login extends JFrame {
             }
         });//Adds an ActionListener to the button and calls actionPerformed method
         panel.add(registerButton, gbc);
+
+        window.setVisible(true);
     } 
 }
