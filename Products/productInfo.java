@@ -1,13 +1,12 @@
 package Products;
 
 /**
- * Class Name: productInfo.java
- * Date:
- * @since 1.0 (2023-08)
- * @author Armon Lee
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
- * Description: store product variables and sets them to private
- *  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * <p>
+ * Class Name: productInfo.java<br>
+ * @since 1.0 (2023-08)<br>
+ * @author Armon Lee<br>
+ * Description: store product variables and sets them to private<br>
+ * </p>
  */
 public class productInfo {
     
@@ -26,22 +25,22 @@ public class productInfo {
     }
     
     /**
-     * productInfo()
-     * @param productID
-     * @param name
-     * @param price
-     * @param description
-     * @param category
-     * @param size
-     * @param color
-     * @param stockQuantity
-     * @param image
-     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-     * Description - Public constructor the stores private variables
-     * that are collected from the reader. It can also be called 
-     * throughout the program to get information about a certain
-     * product
-     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+     * <p>
+     * productInfo()<br>
+     * @param productID <br>
+     * @param name <br>
+     * @param price <br>
+     * @param description <br>
+     * @param category <br>
+     * @param size <br>
+     * @param color <br>
+     * @param stockQuantity <br>
+     * @param image <br>
+     * Description - Public constructor the stores private variables<br>
+     * that are collected from the reader. It can also be called <br>
+     * throughout the program to get information about a certain<br>
+     * product<br>
+     * </p>
      */
     public productInfo(String productID, String name, double price, String description, String category, String size, String color, String stockQuantity, String image) {
         this.productID = productID;
