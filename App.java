@@ -3,14 +3,13 @@ import javax.swing.*;
 import Products.*;
 
 /**
- * Class Name: Product.java
- * Date:
- * @since 1.0 (2023-08)
- * @author Armon Lee, ...
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
- * Description: This class runs the proper files and classes
- * to make the app run smoothly.
- *  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * <p>
+ * Class Name: Product.java<br>
+ * @since 1.0 (2023-08)<br>
+ * @author Armon Lee<br>
+ * Description: This class runs the proper files and classes<br>
+ * to make the app run smoothly.<br>
+ * </p>
  */
 
 public class App {
