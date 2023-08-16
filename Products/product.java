@@ -4,39 +4,37 @@ import java.util.*;
 import java.io.*;
 
 /**
- * Class Name: Product.java
- * Date:
- * @since 1.0 (2023-08)
- * @author Armon Lee
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
- * Description: This class gives a list of products that
- * we have in our warehouse with their full item description.
- * Additionally, the class will be able to properly read and
- * store this info into our application to display for users to
- * see what’s in stock.
- *  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * Important Data Structures: 
- *    - allProducts - list of all products in productFile.txt
- *      and holds values containing their information like
- *      productID, name, price, description, category, size, 
- *      color, stockQuantity, image. These values are 
- *      categorized in the productInfo class
+ * <p>
+ * Class Name: Product.java<br>
+ * @since 1.0 (2023-08)<br>
+ * @author Armon Lee<br>
+ * Description: This class gives a list of products that<br>
+ * we have in our warehouse with their full item description.<br>
+ * Additionally, the class will be able to properly read and<br>
+ * store this info into our application to display for users to<br>
+ * see what’s in stock.<br>
+ * Important Data Structures: <br>
+ *    - allProducts - list of all products in productFile.txt<br>
+ *      and holds values containing their information like<br>
+ *      productID, name, price, description, category, size, <br>
+ *      color, stockQuantity, image. These values are <br>
+ *      categorized in the productInfo class<br>
+ * </p>
  */
 public class Product {
     public static ArrayList <productInfo> allProducts = new ArrayList<productInfo>(); //list of products
     PrintStream prt = System.out;
 
     /**
-     * loadProducts(String fn)
-     * Date:
-     * @since 1.0 (2023-08)
-     * @author Armon Lee
-     * @param fn - file that infomation about products and then read
-     * in loadProducts(String fn) method
-     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-     * Description: Reads lines in from productFile and stores them in
-     * proper variables by calling the productInfo constructor
-     *  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+     * <p>
+     * loadProducts(String fn)<br>
+     * @since 1.0 (2023-08)<br>
+     * @author Armon Lee<br>
+     * @param fn - file that infomation about products and then read<br>
+     * in loadProducts(String fn) method<br>
+     * Description: Reads lines in from productFile and stores them in<br>
+     * proper variables by calling the productInfo constructor<br>
+     * </p>
      */
     public void loadProducts(String fn) {
         //product variables
@@ -72,13 +70,12 @@ public class Product {
     }
 
     /**
-     * print()
-     * Date:
-     * @since 1.0 (2023-08)
-     * @author Armon Lee
-     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-     * Description: prints each product and their info onto terminal
-     *  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+     * <p>
+     * print()<br>
+     * @since 1.0 (2023-08)<br>
+     * @author Armon Lee<br>
+     * Description: prints each product and their info onto terminal<br>
+     * </p>
      */
     void print() {
         for (productInfo info : allProducts) {
