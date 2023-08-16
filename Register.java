@@ -117,7 +117,7 @@ public class Register extends JFrame {
 				{
 					dispose();
 					JOptionPane.showMessageDialog(null, "Registration Successful!");
-					HomePage home = new HomePage();
+					HomePage home = new HomePage(user.getShoppingCart());
 					home.DisplayHomePage();
 				}
 				else

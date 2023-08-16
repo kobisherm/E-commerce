@@ -48,6 +48,10 @@ public class User {
 		this.cart = new ShoppingCart();
 	}
 	
+	public ShoppingCart getShoppingCart()
+	{
+		return cart;
+	}
 	
 	/**
 	 * @author Davit Sargsyan

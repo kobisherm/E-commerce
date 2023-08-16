@@ -26,7 +26,13 @@ public class ShoppingCart {
     /**
      * A constructor to make the shopping cart and create the GUI elements.
      */
-    public ShoppingCart() { //Constructor to start the shopping cart
+    // public ShoppingCart()
+    // {
+    //     //displayShoppingCart();
+    // }
+
+    //is called from homepage
+    public void displayShoppingCart() { //Constructor to start the shopping cart
         items = new ArrayList<>(); // create the list of items for the shopping cart
         totalPrice = 0.0; //initial price
 

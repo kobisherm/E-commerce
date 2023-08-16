@@ -38,13 +38,20 @@ public class HomePage extends JFrame{
 	public ShoppingCart cart = new ShoppingCart();
 	int page = 0;
 
+public HomePage(ShoppingCart _cart)
+{
+	cart = _cart;
+}
+
 /**
+ * <p>
  * Class/Module name: HomePage
  * @since 1.0 (2023-08)
  * @author Kobi Sherman
  * Description:
  * This function creates and sets the elements of the homePage instance.
  * The home page is created using javax.swing and java.awt functionalities.
+ * </p>
  */
 	void DisplayHomePage()
 	{
@@ -114,6 +121,7 @@ public class HomePage extends JFrame{
 		add(appLogoBar);
 		appLogoBar.add(appTitle);
 		
+		productsToDisplay = Product.allProducts;
 		itemsPanel = new JPanel(new GridLayout(3, 3 ,10, 10));
 		itemsPanel.setPreferredSize(new Dimension((int)screenSize.getWidth(), 500));
 		displayItems(itemsPanel);
@@ -135,6 +143,7 @@ public class HomePage extends JFrame{
 	}
 	
 /**
+ * <p>
  * Class/Module name: HomePage
  * @since 1.0 (2023-08)
  * @author Kobi Sherman
@@ -143,6 +152,7 @@ public class HomePage extends JFrame{
  * in the homePage. This function depends on the current page. 
  * @param producstList - The total list of filtered or unfiltered search results to display.
  * @param panel - The target panel to contain the item displays.
+ * </p>
  */
 	void displayItems(JPanel panel)
 	{
@@ -183,12 +193,14 @@ public class HomePage extends JFrame{
 	}
 
 /**
+ * <p>
  * Class/Module name: HomePage
  * @since 1.0 (2023-08)
  * @author Kobi Sherman
  * Description:
  * This function redraws the home page, and is called after the current page is updated 
  * to display the correct items. 
+ * </p>
  */
 	void refreshItems()
 	{
@@ -211,7 +223,7 @@ public class HomePage extends JFrame{
 	
 	public void onCartClick()
 	{
-		cart.Shopping_Cart();
+		cart.displayShoppingCart();
 	}
 
 	public void onCheckoutClick()

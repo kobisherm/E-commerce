@@ -53,6 +53,7 @@ public final class AppTheme {
 	}
 
 /**
+ * <p>
  * Class/Module name: AppTheme
  * @since 1.0 (2023-08)
  * @author Kobi Sherman
@@ -61,6 +62,7 @@ public final class AppTheme {
  * Method overloading is used.
  * @return a JButton that is formatted in a consistent, standard way. 
  * @param text - The text displayed by the button
+ * </p>
  */
 	public static JButton createStandardButton(String text)
 	{
@@ -73,6 +75,7 @@ public final class AppTheme {
 	}
 
 /**
+ * <p>
  * Class/Module name: AppTheme
  * @since 1.0 (2023-08)
  * @author Kobi Sherman
@@ -81,6 +84,7 @@ public final class AppTheme {
  * @return an ImageIcon that is a scaled version of an original ImageIcon.
  * @param image - the original unscaled image
  * @param scale - a float multiplier to scale the image by
+ * </p>
  */
 	public static ImageIcon scaleImage(ImageIcon image, float scale)
 	{
