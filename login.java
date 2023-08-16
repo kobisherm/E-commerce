@@ -5,9 +5,10 @@ import javax.swing.*;
 /**
  * Class Name: Login.java
  * Date:
+ * @since 1.0 (2023-08)
  * @author Armon Lee
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
- * Description: This class should give the users the option 
+ * Description: This class gives the users the option 
  * to login with an existing account or register for a new 
  * account. As well as, take them to the homepage if logged 
  * in with correct username and password, take them to 
@@ -15,15 +16,7 @@ import javax.swing.*;
  * them if the username or password they entered was incorrect.
  *  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Methods: 
- * loginScreen() - displays login screen, including text and 
- * input text boxes for the user. In addition, the class contains
- * an if else statement to direct users to direct users according
- * to their inputs.
- *    - if user has account & inputs correct login then it will
- *      take them to home screen
- *    - if user has account & inputs incorrect login then an 
- *      incorrect password message will pop up
- *    - if user has no account then they can register for one
+ * 
  */
 
 public class Login extends JFrame {
@@ -41,6 +34,17 @@ public class Login extends JFrame {
     private static JButton registerButton;
     private static JLabel logoLabel;
 
+    /**
+     * loginScreen() - displays login screen, including text and
+     * input text boxes for the user. In addition, the class contains
+     * an if else statement to direct users to direct users according
+     * to their inputs.
+     *    - if user has account & inputs correct login then it will
+     *      take them to home screen
+     *    - if user has account & inputs incorrect login then an 
+     *      incorrect password message will pop up
+     *    - if user has no account then they can register for one
+     */
     public void loginScreen() {
         
         JPanel panel = new JPanel(new GridBagLayout()); 
@@ -102,7 +106,25 @@ public class Login extends JFrame {
         gbc.gridy = 3;
         gbc.gridwidth = 2; // Spans across 2 columns
         gbc.fill = GridBagConstraints.HORIZONTAL; // Button grows to fill space horizontally
+        /**
+         * loginButton.addActionListener()
+         * @since 1.0 (2023-08)
+         * @author Armon Lee
+         * @param ActionListener - The listener interface for receiving action events.
+         * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+         * Description - Applies functionally to the loginButton. If user
+         * clicks loginButton, has account, & inputs correct login then 
+         * it will take them to home screen. However, if user clicks button,
+         * has account, & inputs incorrect login then an incorrect password
+         * message will pop up.
+         * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+         */
         loginButton.addActionListener(new ActionListener() {
+            /**
+             * Important Variables:
+             * Username - collects input from username box
+             * Password - collects input from password box
+             */
             @Override
             public void actionPerformed(ActionEvent event) {
             String Username = userbox.getText();
@@ -136,6 +158,17 @@ public class Login extends JFrame {
         gbc.gridy = 4;
         gbc.gridwidth = 2; // Spans across 2 columns
         gbc.fill = GridBagConstraints.HORIZONTAL;
+        /**
+         * @since 1.0 (2023-08)
+         * @author Armon Lee
+         * registerButton.addActionListener()
+         * @param ActionListener - The listener interface for receiving action events.
+         * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+         * Description - Applies functionally to the registerButton. If
+         * user clicks registerButton the it will take them to the
+         * register page.
+         * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+         */
         registerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent event) {
@@ -148,8 +181,5 @@ public class Login extends JFrame {
             }
         });//Adds an ActionListener to the button and calls actionPerformed method
         panel.add(registerButton, gbc);
-    }
-
-    //username and password check
-    
+    } 
 }
