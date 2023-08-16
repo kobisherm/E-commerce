@@ -134,7 +134,7 @@ public class Login extends JFrame {
             if (isUserValid){
                 //JOptionPane.showMessageDialog(null, "Login Successful");
                 //opens Homepage class
-                HomePage H = new HomePage();
+                HomePage H = new HomePage(currentUser.getShoppingCart());
                 H.DisplayHomePage();
                 //closes login window
                 window.setVisible(false);
