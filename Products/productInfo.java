@@ -1,5 +1,14 @@
 package Products;
 
+/**
+ * Class Name: productInfo.java
+ * Date:
+ * @since 1.0 (2023-08)
+ * @author Armon Lee
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+ * Description: store product variables and sets them to private
+ *  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ */
 public class productInfo {
     
     private String productID;
@@ -16,6 +25,24 @@ public class productInfo {
         this.stockQuantity = stockQuantity;
     }
     
+    /**
+     * productInfo()
+     * @param productID
+     * @param name
+     * @param price
+     * @param description
+     * @param category
+     * @param size
+     * @param color
+     * @param stockQuantity
+     * @param image
+     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+     * Description - Public constructor the stores private variables
+     * that are collected from the reader. It can also be called 
+     * throughout the program to get information about a certain
+     * product
+     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+     */
     public productInfo(String productID, String name, double price, String description, String category, String size, String color, String stockQuantity, String image) {
         this.productID = productID;
         this.name = name;
