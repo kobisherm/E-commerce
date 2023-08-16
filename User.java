@@ -32,9 +32,6 @@ public class User {
 	 * @since 1.0 (2023-07)
 	 * Constructor of User class constructs a new user with the
 	 * given email and password.
-	 * 
-	 * 
-	 * 
 	 */
 	
 	public User(String email, String password)
@@ -174,7 +171,7 @@ public class User {
 	 * void removeFromCart()
 	 * <p>
 	 * This function should remove items from the user's cart
-	 * This function is not implemented yet
+	 * 
 	 * </p>
 	 * @return nothing as of now
 	 * 
@@ -192,7 +189,7 @@ public class User {
 	 * void checkout()
 	 * <p>
 	 * This function should let the current user check out.
-	 * This function is not implemented yet
+	 * 
 	 * </p>
 	 * @return nothing as of now
 	 */
