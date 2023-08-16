@@ -3,14 +3,53 @@ import java.util.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-//comment
-public class Register extends JFrame {
-	private JTextField emailField;
-	private JPasswordField passwordField;
-	private JButton registerButton;
-	private JButton loginButton;
-	private JLabel logoLabel;
 
+/**
+ * Register is a GUI class that extends JFrame. 
+ * <p>
+ * This class provides the user interface for the registration screen of the application. 
+ * It allows a new user to enter their email and password to create a new account.
+ * </p>
+ * 
+ * @author Davit Sargsyan
+ * @version 1.0
+ * @since 2023-08
+ */
+public class Register extends JFrame {
+    
+    /**
+     * A JTextField for the user to input their email.
+     */
+    private JTextField emailField;
+    
+    /**
+     * A JPasswordField for the user to input their password.
+     */
+    private JPasswordField passwordField;
+    
+    /**
+     * A JButton that triggers the registration process when clicked.
+     */
+    private JButton registerButton;
+    
+    /**
+     * A JButton that takes the user to the login page when clicked.
+     */
+    private JButton loginButton;
+    
+    /**
+     * A JLabel that displays the application's logo.
+     */
+    private JLabel logoLabel;
+
+    /**
+     * Sets up the registration GUI screen.
+     * <p>
+     * This method initializes the components of the registration screen,
+     * arranges them using a layout manager, and sets up the event handlers
+     * for the Register and Login buttons.
+     * </p>
+     */
 	void register() {
 	
 		setTitle("Register");
