@@ -181,9 +181,8 @@ public HomePage(ShoppingCart _cart)
 			String price = "$" + item.getPrice() + "<br>";
 			String category = "Category: " + item.getCategory() + "<br>";
 			String description = item.getDescription() + "<br>";
-			String quantity = item.getStockQuantity() + " in stock";
 
-			display.setText("<html>" + itemName + price + category + description + quantity + "</html>");
+			display.setText("<html>" + itemName + price + category + description + "</html>");
 
 			display.setFont(AppTheme.smallFont);
 			display.setHorizontalAlignment(JButton.LEFT);

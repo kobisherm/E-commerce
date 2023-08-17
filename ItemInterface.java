@@ -16,6 +16,7 @@ public class ItemInterface extends JFrame{
     public final productInfo item;
     public final ShoppingCart cart;
     JTextField sizeInput;
+    JTextField categoryInput;
 
     public ItemInterface(productInfo item, ShoppingCart cart)
     {
@@ -34,6 +35,8 @@ public class ItemInterface extends JFrame{
         message.setFont(AppTheme.smallFont);
         mainPanel.add(message);
 
+        //shoe size input
+
         JPanel sizePanel = new JPanel();
         sizePanel.setPreferredSize(new Dimension(400, 30));
         JLabel sizeLabel = new JLabel("Enter size:");
@@ -45,6 +48,19 @@ public class ItemInterface extends JFrame{
         sizePanel.add(sizeInput);
 
         mainPanel.add(sizePanel);
+
+        //category input
+        JPanel categoryPanel = new JPanel();
+        categoryPanel.setPreferredSize(new Dimension(600, 30));
+        JLabel categoryLable = new JLabel("Mens or Womens");
+        categoryLable.setFont(AppTheme.smallFont);
+        categoryLable.setPreferredSize(new Dimension(100, 15));
+        categoryInput = new JTextField();
+        categoryInput.setPreferredSize(new Dimension(40, 15));
+        categoryPanel.add(categoryLable);
+        categoryPanel.add(categoryInput);
+
+        mainPanel.add(categoryPanel);
 
         JPanel buttonsPanel = new JPanel();
         JButton yesBtn = AppTheme.createStandardButton("Yes", new Dimension(100, 50));
@@ -78,8 +94,13 @@ public class ItemInterface extends JFrame{
             return;
         }
 
-        if(item == null) System.out.println("error here");
-
+        String category = categoryInput.getText().toLowerCase();
+        if(!category.equals("m") && !category.equals("w"))
+        {
+            categoryInput.setBackground(AppTheme.red);
+            return;
+        }
+        
         cart.addProductToCart(item);
         dispose();
     }
