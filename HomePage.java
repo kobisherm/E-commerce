@@ -175,6 +175,7 @@ public HomePage(ShoppingCart _cart)
 			ImageIcon image = new ImageIcon(item.getImage());
 			image = AppTheme.scaleImage(image, 0.1f);
 			JButton display = new JButton(image);
+			display.addActionListener(x -> OnItemClick(item));
 
 			String itemName = "<b>" + item.getName().toUpperCase() + "</b><br>";
 			String price = "$" + item.getPrice() + "<br>";
@@ -248,5 +249,10 @@ public HomePage(ShoppingCart _cart)
 	{
 		page -= 1;
 		refreshItems();
+	}
+
+	public void OnItemClick(productInfo item)
+	{
+		new ItemInterface(item, cart);
 	}
 }
