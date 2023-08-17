@@ -6,9 +6,11 @@ public class Order extends JFrame{
     private static JLabel orderTxt, addressInfoTxt, cardInfoTxt;
     private static JTextField address1, address2, zipcode, city, state;
     private static JTextField cardName, cardNum, CVV;
-    private static JLabel address1Txt, address2Txt, zipcodeTxt, cityTxt, stateTxt;
+    private static JLabel addressTxt;
     private static JLabel cardNameTxt, cardNumTxt, CVVTxt;
     private static JButton orderButton;
+
+    static String[] addressTxtArray = new String[]{"address1", "address2", "zipcode", "city", "state"};
 
     public static void main(String[] args) {
         DisplayOrderScreen();
@@ -40,12 +42,18 @@ public class Order extends JFrame{
         int boxx = txtx + 80;
 
         //display "Address 1"
-        makeText(panel, addressInfoTxt, "Address 1", txtx, posy, 100, 20);
+        //makeText(panel, addressTxt, "Address 1", txtx, posy, 100, 20);
 
         //display Address 1 box
         makeBox(panel, address1, boxx, posy, 193, 28);
 
-        //display Address 
+        //display "Address 2"
+        //makeText(panel, addressTxt, "Address 2", txtx, posy+50, 100, 20);
+
+        for( int i = 0; i < 5; i++){
+            makeText(panel, addressTxt, addressTxtArray[i], txtx, posy, 100, 20);
+            posy= posy + 50;
+        }
 
 
         //card
