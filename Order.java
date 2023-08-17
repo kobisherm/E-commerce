@@ -6,19 +6,20 @@ public class Order extends JFrame{
     private static JLabel orderTxt, addressInfoTxt, cardInfoTxt;
     private static JTextField address1, address2, zipcode, city, state;
     private static JTextField cardName, cardNum, CVV;
-    private static JLabel addressTxt;
-    private static JLabel cardNameTxt, cardNumTxt, CVVTxt;
+    private static JLabel addressTxt, cardTxt;
     private static JButton orderButton;
 
     static String[] addressTxtArray = new String[]{"address1", "address2", "zipcode", "city", "state"};
+    static JTextField[] addressBoxArray = new JTextField[]{address1, address2, zipcode, city, state};
+
+    static String[] cardTxtArray = new String[]{"Card Name", "Card Number", "CVV"};
+    static JTextField[] cardBoxArray = new JTextField[]{cardName, cardNum, CVV};
 
     public static void main(String[] args) {
         DisplayOrderScreen();
     }
     
     public static void DisplayOrderScreen(){
-        int boxy;
-        int texty = 53;
 
         JPanel panel = new JPanel();
         panel.setLayout(null);
@@ -38,25 +39,40 @@ public class Order extends JFrame{
         makeText(panel, addressInfoTxt, "Address Info", 100, 40, 100, 20);
 
         int posy = 90;
-        int txtx = 100;
-        int boxx = txtx + 80;
+        int txtx = 140;
+        int boxx = txtx + 90;
 
-        //display "Address 1"
-        //makeText(panel, addressTxt, "Address 1", txtx, posy, 100, 20);
-
-        //display Address 1 box
-        makeBox(panel, address1, boxx, posy, 193, 28);
-
-        //display "Address 2"
-        //makeText(panel, addressTxt, "Address 2", txtx, posy+50, 100, 20);
-
+        //display address text
         for( int i = 0; i < 5; i++){
             makeText(panel, addressTxt, addressTxtArray[i], txtx, posy, 100, 20);
             posy= posy + 50;
         }
 
+        //display address box
+        posy = 90;
+        for(int i = 0; i < 5; i++){
+            makeBox(panel, addressBoxArray[i], boxx, posy, 193, 28);
+            posy= posy + 50;
+        }
 
-        //card
+        //display "Card Info"
+        makeText(panel, cardInfoTxt, "Card Info", 100, 370, 100, 20);
+
+        //display card text
+        posy = 420;
+        for( int i = 0; i < 3; i++){
+            makeText(panel, cardTxt, cardTxtArray[i], txtx, posy, 100, 20);
+            posy= posy + 50;
+        }
+
+        //display card box
+        posy = 420;
+        for( int i = 0; i < 3; i++){
+            makeBox(panel, cardBoxArray[i], boxx, posy, 193, 28);
+            posy= posy + 50;
+        }
+
+        //update quantity
 
         window.setVisible(true);
     }
