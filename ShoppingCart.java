@@ -33,8 +33,11 @@ public class ShoppingCart {
 
     //is called from homepage
     public void displayShoppingCart() { //Constructor to start the shopping cart
-        items = new ArrayList<>(); // create the list of items for the shopping cart
+        
+       if (items == null || items.isEmpty()) {
+        items = new ArrayList<>(); // Initialize the list only if it's null or empty
         totalPrice = 0.0; //initial price
+     }
 
         cartListModel = new DefaultListModel<>(); //create a new list mode
         cartList = new JList<>();// create a jlist component
