@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,8 +13,9 @@ import Products.productInfo;
 //This class provides UI to add items to cart
 public class ItemInterface extends JFrame{
     
-    public productInfo item;
-    public ShoppingCart cart;
+    public final productInfo item;
+    public final ShoppingCart cart;
+    JTextField sizeInput;
 
     public ItemInterface(productInfo item, ShoppingCart cart)
     {
@@ -32,9 +34,17 @@ public class ItemInterface extends JFrame{
         message.setFont(AppTheme.smallFont);
         mainPanel.add(message);
 
-        JTextField sizeInput = new JTextField();
+        JPanel sizePanel = new JPanel();
+        sizePanel.setPreferredSize(new Dimension(400, 30));
+        JLabel sizeLabel = new JLabel("Enter size:");
+        sizeLabel.setFont(AppTheme.smallFont);
+        sizeLabel.setPreferredSize(new Dimension(80, 15));
+        sizeInput = new JTextField();
         sizeInput.setPreferredSize(new Dimension(40, 15));
-        mainPanel.add(sizeInput);
+        sizePanel.add(sizeLabel);
+        sizePanel.add(sizeInput);
+
+        mainPanel.add(sizePanel);
 
         JPanel buttonsPanel = new JPanel();
         JButton yesBtn = AppTheme.createStandardButton("Yes", new Dimension(100, 50));
@@ -53,6 +63,24 @@ public class ItemInterface extends JFrame{
 
     public void OnYesClick()
     {
+        int selectedSize;
+        try{
+            selectedSize = Integer.parseInt(sizeInput.getText());        
+        }
+        catch(Exception e)
+        {
+            sizeInput.setBackground(AppTheme.darkRed);
+            return;
+        }
+        if(selectedSize < 1 || selectedSize > 15) 
+        {
+            sizeInput.setBackground(AppTheme.red);
+            return;
+        }
 
+        if(item == null) System.out.println("error here");
+
+        cart.addProductToCart(item);
+        dispose();
     }
 }
