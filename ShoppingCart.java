@@ -102,14 +102,11 @@ public class ShoppingCart {
     /**
      * Adds a sample product to the cart and updates the GUI.
      */
-    private void addProductToCart() {
-        productInfo selectedProduct = cartList.getSelectedValue();
-             if (selectedProduct != null) {
-                 addItem(selectedProduct);
-                cartListModel.addElement(selectedProduct);
-                  updateTotalPriceLabel();
+    public void addProductToCart(productInfo item) {
+            addItem(item);
+            cartListModel.addElement(item);
+             updateTotalPriceLabel();
     }
-}
 
     /**
      * Removes the selected product from the cart and updates the GUI.
