@@ -5,6 +5,8 @@ import java.util.UUID;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.File;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 /**
  * @author Davit Sargsyan
@@ -26,6 +28,13 @@ public class User {
 	private String password;
 	private boolean isRegistered;
 	private ShoppingCart cart;
+	private static final String EMAIL_PATTERN = 
+        "^[a-zA-Z0-9_+&*-]+(?:\\."+
+        "[a-zA-Z0-9_+&*-]+)*@" + 
+        "(?:[a-zA-Z0-9-]+\\.)+[a-z" + 
+        "A-Z]{2,7}$";
+
+    private static final Pattern pattern = Pattern.compile(EMAIL_PATTERN);
 	
 	/**
 	 * @author Davit Sargsyan
@@ -33,7 +42,6 @@ public class User {
 	 * Constructor of User class constructs a new user with the
 	 * given email and password.
 	 */
-	
 	public User(String email, String password)
 	{
 		this.email = email;
@@ -65,13 +73,35 @@ public class User {
 	 * which helps keep track of users + is essential for login functionality.
 	 * This function works with register class which represents the registration page
 	 * and takes care of all the GUI requirements of that page.
-	 * This function is called from within register class. 
+	 * This function is called from within register class.
+	 * Since this comment was added later, I have also added ways to check
+	 * for email to be of valid format and for password to be of valid format.
+	 * Also we check if the user exists or not based on the email with which they sign up with. 
 	 * </p>
 	 * @return true if registration was successful, otherwise false
 	 * 
 	 */
 	public boolean registerUser()
 	{
+		// Validate email
+        if (!isValidEmail(this.email)) {
+            System.out.println("Invalid email format");
+            return false;
+        }
+        
+        // Validate password
+        if (!isValidPassword(this.password)) {
+            System.out.println("Password must meet the criteria");
+            return false;
+        }
+        
+        // Check for duplicate users
+        if (isUserExist(this.email)) {
+            System.out.println("User already exists with this email.");
+            return false;
+        }
+
+
 		this.userID = UUID.randomUUID().toString();
 		this.isRegistered = true;
 
@@ -129,77 +159,44 @@ public class User {
 
 		return false;
 	}
-	
-	/**
-	 * @author Davit Sargsyan
-	 * @since 1.0 (2023-07)
-	 * 
-	 * void logout()
-	 * <p>
-	 * This method logs out the current user, clears session data
-	 * and redirects the user to login page.
-	 * </p>
-	 * @return nothing
-	 * 
-	 */
-	public void logout()
-	{
-		this.email = null;
-	    this.password = null;
-	    this.isRegistered = false;
-	}
-	
-	
-	/**
-	 * @author Davit Sargsyan
-	 * @since 1.0 (2023-07)
-	 * 
-	 * void addToCart()
-	 * <p>
-	* This function should add items to the user's cart
-	 * This function is not implemented yet
-	 * </p>
-	 * @return nothing as of now
-	 * 
-	 */
-	public void addToCart()
-	{
-		
-	}
-	
-	
-	/**
-	 * @author Davit Sargsyan
-	 * @since 1.0 (2023-07)
-	 * 
-	 * void removeFromCart()
-	 * <p>
-	 * This function should remove items from the user's cart
-	 * 
-	 * </p>
-	 * @return nothing as of now
-	 * 
-	 */
-	public void removeFromCart()
-	{
-		
-	}
-	
-	
-	/**
-	 * @author Davit Sargsyan
-	 * @since 1.0 (2023-07)
-	 * 
-	 * void checkout()
-	 * <p>
-	 * This function should let the current user check out.
-	 * 
-	 * </p>
-	 * @return nothing as of now
-	 */
-	public void checkout()
-	{
-		
-	}
+
+
+	private boolean isValidEmail(String email) {
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
+
+     private boolean isValidPassword(String password) {
+        // Password should be at least 8 characters,
+        // contain at least one digit, one lower case,
+        // one upper case, and one special character.
+        
+        String passwordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$";
+        return password.matches(passwordPattern);
+    }
+    
+    private boolean isUserExist(String email) {
+                String line;
+        try (BufferedReader br = new BufferedReader(new FileReader("users.txt"))){
+            while ((line = br.readLine()) != null){
+                String[] parts = line.split(",");
+                // Check if the line has enough parts (at least 3) to be a valid record
+                if (parts.length >= 3) {
+                    String emailFromFile = parts[1].trim();
+                    if (emailFromFile.equals(email)) {
+                        // Found a match, this user exists
+                        return true;
+                    }
+                }
+            }
+        } catch (IOException e){
+            System.out.println("Error reading users.txt file");
+            e.printStackTrace();
+        }
+        // If we reach this point, no matching user was found
+        return false;
+    }
+
 	
 }

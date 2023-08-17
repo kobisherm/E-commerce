@@ -40,12 +40,19 @@ public class ShoppingCart {
         cartList = new JList<>();// create a jlist component
         totalPriceLabel = new JLabel("Total Price: $0.00"); //makes the total price label
 
-        JButton addButton = new JButton("Add to Cart"); //creates add to cart button
-        addButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                addProductToCart();
+         JButton addButton = new JButton("Add to Cart"); //creates add to cart button
+             addButton.addActionListener(new ActionListener()
+           {
+           public void actionPerformed(ActionEvent e)
+           {
+             productInfo selectedProduct = cartList.getSelectedValue();
+               if (selectedProduct != null) {
+                addItem(selectedProduct);
+                 cartListModel.addElement(selectedProduct);
+                 updateTotalPriceLabel();
             }
-        });
+        }
+    });
 
         JButton removeButton = new JButton("Remove from Cart");//creates remove from cart button
         removeButton.addActionListener(new ActionListener() {
@@ -96,11 +103,13 @@ public class ShoppingCart {
      * Adds a sample product to the cart and updates the GUI.
      */
     private void addProductToCart() {
-        productInfo product = new productInfo(); //"Sample Product", 9.99);
-        addItem(product);
-        cartListModel.addElement(product);
-        updateTotalPriceLabel();
+        productInfo selectedProduct = cartList.getSelectedValue();
+             if (selectedProduct != null) {
+                 addItem(selectedProduct);
+                cartListModel.addElement(selectedProduct);
+                  updateTotalPriceLabel();
     }
+}
 
     /**
      * Removes the selected product from the cart and updates the GUI.
