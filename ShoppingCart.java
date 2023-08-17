@@ -15,8 +15,8 @@ import Products.*;
  */
 public class ShoppingCart {
 
-    private ArrayList<productInfo> items; // hold items in shopping cart
-    private double totalPrice; // total prices of all items
+    private ArrayList<productInfo> items = new ArrayList<>();; // hold items in shopping cart
+    private double totalPrice = 0.0; // total prices of all items
 
     private DefaultListModel<productInfo> cartListModel; // a model to display the items in the cart
     private JList<productInfo> cartList; 
@@ -33,8 +33,6 @@ public class ShoppingCart {
 
     //is called from homepage
     public void displayShoppingCart() { //Constructor to start the shopping cart
-        items = new ArrayList<>(); // create the list of items for the shopping cart
-        totalPrice = 0.0; //initial price
 
         cartListModel = new DefaultListModel<>(); //create a new list mode
         cartList = new JList<>();// create a jlist component
