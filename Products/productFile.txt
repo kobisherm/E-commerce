@@ -1,7 +1,7 @@
 101
 Nike Dunk Low Retro
 110.99
-Example Description
+The upper Nike Dunk Low Retro White Black is constructed of white leather with black leather overlays and Swooshes. Classic Nike branding is featured on the nylon tongue, nodding to traditional Dunk design elements. A white midsole and black outsole complete the design.
 Nike
 null
 Black & White
@@ -9,8 +9,8 @@ Black & White
 Products\\productImages\\101.jpg
 102
 Nike Air Force 1 Low '07
-100.99
-Example Description
+99.99
+The Nike Air Force 1 Low White ‘07 originally released in 2007, but since it is an essential colorway to the brand, it consistently restocks.
 Nike
 null
 White
@@ -18,8 +18,8 @@ White
 Products\\productImages\\102.jpg
 103
 Jordan 1 Retro High OG
-110.99
-Example Description
+179.99
+The original Air Jordan 1 Chicago colorway was first introduced in 1985 and has only been retroed a few times since. But 2022 is the year that the colorway returns with an added vintage look.
 Jordan
 null
 Red & White
@@ -28,7 +28,7 @@ Products\\productImages\\103.jpg
 104
 Crocs Pollex Clog
 79.99
-Example Description
+The Horchata colorway reflects an earthy vibe, drenched in a calming shade that screams understated cool. 
 Crocs
 null
 Horchata
@@ -36,8 +36,8 @@ Horchata
 Products\\productImages\\104.jpg
 105
 New Balance 550
-109.99
-Example Description
+99.99
+The New Balance 550 White Grey features a white leather upper with monochromatic perforated leather overlays and puffed New Balance logos.
 New Balance
 null
 White & Grey
@@ -45,8 +45,8 @@ White & Grey
 Products\\productImages\\105.jpg
 106
 Jordan 4 Retro
-119.99
-Example Description
+209.99
+Jordan Brand brought back this fan favorite colorway that is constructed using premium black nubuck uppers with splashes of Tour Yellow throughout the midsole, lace eyelets, and tongue. 
 Jordan
 null
 Yellow & Black
@@ -54,8 +54,8 @@ Yellow & Black
 Products\\productImages\\106.jpg
 107
 Jordan 3 Retro
-119.99
-Example Description
+209.99
+Jordan used the same design and specs as the original 1988 Jordan 3 silhouette to help craft the second model of the Reimagined series. The Air Jordan 3 Retro White Cement is constructed with a white leather upper, and off-white colored midsoles and heel tabs, helping to give the sneaker a vintage design.
 Jordan
 null
 White Cement
@@ -63,8 +63,8 @@ White Cement
 Products\\productImages\\107.jpg
 108
 Nike Air Max 1 '86 OG
-109.99
-Example Description
+149.99
+The Air Max 1 ‘86 Big Bubble released as Nikes premier Air Max Day release in 2023. The sneakers are constructed using grey synthetic nubuck, white mesh and red synthetic suede across the uppers and a large air unit on the midsole. Nike used Sport Red branding on the tongue and heel of the sneaker.
 Nike
 null
 Red, Grey, & Black
@@ -72,8 +72,8 @@ Red, Grey, & Black
 Products\\productImages\\108.jpg
 109
 Adidas Yeezy Slide
-79.99
-Example Description
+69.99
+The Adidas Yeezy Slide offers a sleek aesthetic, unrivaled comfort and a "shark teeth" sole which finalizes the design perfectly.
 Adidas
 null
 Black
@@ -81,8 +81,8 @@ Black
 Products\\productImages\\109.jpg
 110
 Nike Air Force 1 Low
-150.99
-Example Description
+399.99
+Nike’s first-ever collaboration with Tiffany & Co. comes in the form of a luxurious Air Force 1.
 Nike
 null
 Black & Blue
@@ -90,8 +90,8 @@ Black & Blue
 Products\\productImages\\110.jpg
 111
 Saint Laurent Court Classic SL/06 Low
-199.99
-Example Description
+349.99
+The Saint Laurent Court Classic is a low-profile sneaker made with distressed organic cotton canvas and leather stitched saint laurent along outer side and saint laurent signature embossed back tab
 Saint Laurent
 null
 Cream
@@ -99,8 +99,8 @@ Cream
 Products\\productImages\\111.jpg
 112
 Jordan 11 Retro
-119.99
-Example Description
+224.99
+The Air Jordan 11 Cherry brings a Chicago colorway to the iconic patent leather sneaker. Cherry red patent leather mudguards surround the majority of the upper, alongside white leather and a matching Cherry red Jumpman.
 Jordan
 null
 White & Red
@@ -109,7 +109,7 @@ Products\\productImages\\112.jpg
 113
 Converse Chuck Taylor All-Star 70 Hi
 99.99
-Example Description
+The Converse Chuck Taylor All-Star 70 Hi Golf Le Fleur Yellow Flame features an Egret canvas upper with light pink and blue flame graphics throughout the design.
 Converse
 null
 White & Purple
@@ -117,8 +117,8 @@ White & Purple
 Products\\productImages\\113.jpg
 114
 Adidas Samba OG
-109.99
-Example Description
+99.99
+Originally designed to protect soccer players’ feet during winter, the adidas Samba OG Cloud White Core Black has transcended its sports function but still maintains its aesthetic appeal.
 Adidas
 null
 White & Black
@@ -126,8 +126,8 @@ White & Black
 Products\\productImages\\114.jpg
 115
 Jordan 4 Retro
-199.99
-Example Description
+224.99
+James Whitner’s A Ma Maniére and Jordan Brand partner up for this luxury AJ 4 silhouette. The new Air Jordan 4 A Ma Maniére features a deeply rich Violet Ore and vintage cream tones.
 Jordan
 null
 Violet Ore
