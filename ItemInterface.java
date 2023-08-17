@@ -5,6 +5,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import Products.productInfo;
 
@@ -30,6 +31,10 @@ public class ItemInterface extends JFrame{
         JLabel message = new JLabel("Add " + item.getName() + " to cart?");
         message.setFont(AppTheme.smallFont);
         mainPanel.add(message);
+
+        JTextField sizeInput = new JTextField();
+        sizeInput.setPreferredSize(new Dimension(40, 15));
+        mainPanel.add(sizeInput);
 
         JPanel buttonsPanel = new JPanel();
         JButton yesBtn = AppTheme.createStandardButton("Yes", new Dimension(100, 50));
