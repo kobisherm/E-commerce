@@ -15,30 +15,54 @@ public class Order extends JFrame{
     }
     
     public static void DisplayOrderScreen(){
-        JPanel panel = new JPanel(new GridBagLayout()); 
-        //panel.setBackground(AppTheme.black); // Set background color to black
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(15, 15, 15, 15); 
+        int boxy;
+        int texty = 53;
 
-        // Display window
+        JPanel panel = new JPanel();
+        panel.setLayout(null);
+
+        //display window
         JFrame window = new JFrame();
-        window.setTitle("Order");
-        window.setLocationRelativeTo(null); // Centers the window
+        window.setTitle("LOGIN PAGE");
+        window.setLocation(new Point(500, 300));
         window.add(panel);
-        window.setSize(new Dimension(700, 700));
+        window.setSize(new Dimension(800, 900));
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        gbc.gridwidth = 1;
 
-        //H1 order
-        orderTxt = new JLabel("Order");
-        orderTxt.setForeground(AppTheme.black);
-        panel.add(orderTxt);
+        //display "Order" Title
+        makeText(panel, orderTxt, "Order Page", 100, 8, 100, 20);
 
-        //address
+        //display "Address Info" Title
+        makeText(panel, addressInfoTxt, "Address Info", 100, 40, 100, 20);
+
+        int posy = 90;
+        int txtx = 100;
+        int boxx = txtx + 80;
+
+        //display "Address 1"
+        makeText(panel, addressInfoTxt, "Address 1", txtx, posy, 100, 20);
+
+        //display Address 1 box
+        makeBox(panel, address1, boxx, posy, 193, 28);
+
+        //display Address 
+
 
         //card
 
         window.setVisible(true);
+    }
+
+    static public void makeText(JPanel panel, JLabel txtVar, String txt, int x, int y, int width, int height){
+        txtVar = new JLabel(txt);
+        txtVar.setBounds(x, y, width, height);
+        panel.add(txtVar);
+    }
+
+    static public void makeBox(JPanel panel, JTextField boxVar, int x, int y, int width, int height){
+        boxVar = new JTextField();
+        boxVar.setBounds(x, y, width, height);
+        panel.add(boxVar);
     }
     
 }
