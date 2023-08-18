@@ -37,20 +37,24 @@ public class ShoppingCart {
         cartListModel = new DefaultListModel<>(); //create a new list mode
         cartList = new JList<>();// create a jlist component
         totalPriceLabel = new JLabel("Total Price: $0.00"); //makes the total price label
+        cartList.setModel(cartListModel);
 
-         JButton addButton = new JButton("Add to Cart"); //creates add to cart button
-             addButton.addActionListener(new ActionListener()
-           {
-           public void actionPerformed(ActionEvent e)
-           {
-             productInfo selectedProduct = cartList.getSelectedValue();
-               if (selectedProduct != null) {
-                addItem(selectedProduct);
-                 cartListModel.addElement(selectedProduct);
-                 updateTotalPriceLabel();
+         
+            cartListModel.clear();
+             for (productInfo item : items) {
+                cartListModel.addElement(item);
+         }
+        cartList.setCellRenderer(new DefaultListCellRenderer() {
+        @Override
+        public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+            if (value instanceof productInfo) {
+                value = ((productInfo) value).getName();
             }
+            return super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+            
         }
     });
+
 
         JButton removeButton = new JButton("Remove from Cart");//creates remove from cart button
         removeButton.addActionListener(new ActionListener() {
@@ -60,7 +64,6 @@ public class ShoppingCart {
         });
 
         JPanel buttonPanel = new JPanel(); //creates a panel for the buttons
-        buttonPanel.add(addButton);
         buttonPanel.add(removeButton);
 
         JPanel mainPanel = new JPanel(new BorderLayout()); //creates the main panel showing scrollable list and total price label
@@ -100,11 +103,21 @@ public class ShoppingCart {
     /**
      * Adds a sample product to the cart and updates the GUI.
      */
-    public void addProductToCart(productInfo item) {
-            addItem(item);
-            cartListModel.addElement(item);
-             updateTotalPriceLabel();
+   public void addProductToCart(productInfo item) {
+
+        addItem(item);
+        totalPrice = calculateTotalPrice(); // Update the total price
+        updateTotalPriceLabel();
+        cartList.setSelectedValue(item, true);
+        cartList.repaint();
     }
+    private double calculateTotalPrice() {
+        double totalPrice = 0.0;
+        for (productInfo item : items) {
+         totalPrice += item.getPrice();
+        }
+        return totalPrice;
+}
 
     /**
      * Removes the selected product from the cart and updates the GUI.
@@ -112,16 +125,25 @@ public class ShoppingCart {
     private void removeProductFromCart() {
         productInfo selectedProduct = cartList.getSelectedValue();
         if (selectedProduct != null) {
-            removeItem(selectedProduct);
-            cartListModel.removeElement(selectedProduct);
-            updateTotalPriceLabel();
+                 removeItem(selectedProduct);
+                cartListModel.removeElement(selectedProduct);
+
+                int selectedIndex = cartList.getSelectedIndex();
+                if (selectedIndex >= 0) {
+                    cartList.setSelectedIndex(selectedIndex);
+                } else {
+                    cartList.clearSelection();
+                }
+
+                updateTotalPriceLabel();
+                cartList.repaint();
         }
     }
 
     /**
      * Updates the total price label with the current total price of items in the cart.
      */
-    private void updateTotalPriceLabel() {
+    public void updateTotalPriceLabel() {
         totalPriceLabel.setText("Total Price: $" + String.format("%.2f", getTotalPrice()));
     }
 
@@ -137,11 +159,5 @@ public class ShoppingCart {
      * Main method to start the shopping cart application.
      * @param args Command-line arguments (unused).
      */
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new ShoppingCart();
-            }
-        });
-    }
+
 }
