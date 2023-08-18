@@ -14,6 +14,7 @@ import Products.*;
  * which will allow the user to add or remove and clicking around.
  */
 public class ShoppingCart {
+    
 
     private ArrayList<productInfo> items = new ArrayList<>();; // hold items in shopping cart
     private double totalPrice = 0.0; // total prices of all items
@@ -33,10 +34,14 @@ public class ShoppingCart {
 
     //is called from homepage
     public void displayShoppingCart() { //Constructor to start the shopping cart
+        frame.getContentPane().removeAll();
+         frame.revalidate();
+         frame.repaint();
 
         cartListModel = new DefaultListModel<>(); //create a new list mode
         cartList = new JList<>();// create a jlist component
         totalPriceLabel = new JLabel("Total Price: $0.00"); //makes the total price label
+        updateTotalPriceLabel();
         cartList.setModel(cartListModel);
 
          
@@ -63,6 +68,7 @@ public class ShoppingCart {
             }
         });
 
+        
         JPanel buttonPanel = new JPanel(); //creates a panel for the buttons
         buttonPanel.add(removeButton);
 
@@ -103,14 +109,17 @@ public class ShoppingCart {
     /**
      * Adds a sample product to the cart and updates the GUI.
      */
-   public void addProductToCart(productInfo item) {
+  public void addProductToCart(productInfo item) {
+    addItem(item);
+    updateTotalPriceLabel();
+    cartListModel.addElement(item);
+    cartList.setSelectedValue(item, true);
+    cartList.repaint();
+    
+    frame.revalidate(); 
+    frame.repaint();    
+}
 
-        addItem(item);
-        totalPrice = calculateTotalPrice(); // Update the total price
-        updateTotalPriceLabel();
-        cartList.setSelectedValue(item, true);
-        cartList.repaint();
-    }
     private double calculateTotalPrice() {
         double totalPrice = 0.0;
         for (productInfo item : items) {
@@ -144,8 +153,9 @@ public class ShoppingCart {
      * Updates the total price label with the current total price of items in the cart.
      */
     public void updateTotalPriceLabel() {
-        totalPriceLabel.setText("Total Price: $" + String.format("%.2f", getTotalPrice()));
-    }
+         System.out.println("New total price: " + totalPrice);
+         totalPriceLabel.setText("Total Price: $" + String.format("%.2f", getTotalPrice()));
+}
 
     /**
      * Returns the total price of items in the shopping cart.

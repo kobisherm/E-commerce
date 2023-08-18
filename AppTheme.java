@@ -92,4 +92,11 @@ public final class AppTheme {
 		int height = 1 + (int)(image.getIconHeight() * scale);
 		return new ImageIcon(image.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH));
 	}
+
+	public static ImageIcon scaleImage(ImageIcon image, int newWidth)
+	{
+		float scale = (float)newWidth / image.getIconWidth();
+		int newHeight = 1 + (int)(image.getIconHeight() * scale);
+		return new ImageIcon(image.getImage().getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH));
+	}
 }
