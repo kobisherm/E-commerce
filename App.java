@@ -27,6 +27,8 @@ public class App {
 
         //call and read users
 
+        //HomePage home = new HomePage(new ShoppingCart());
+        //home.DisplayHomePage();
         //call classes here
         Login L = new Login();
         L.loginScreen();

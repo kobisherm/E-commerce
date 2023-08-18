@@ -2,6 +2,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import Products.Product;
+
 public class Order extends JFrame {
     private JLabel orderTxt, addressInfoTxt, cardInfoTxt;
     private JTextField address1, address2, zipcode, city, state;
@@ -84,9 +86,13 @@ public class Order extends JFrame {
                     "Purchase Complete",
                     JOptionPane.INFORMATION_MESSAGE);
                 window.dispose();
+
+                //Product P = new Product();
+                //P.loadProducts("Products\\productFile.txt");
+
                 // Navigate to the HomePage
-                //HomePage home = new HomePage(new ShoppingCart());
-                //home.DisplayHomePage();
+                HomePage home = new HomePage(new ShoppingCart());
+                home.DisplayHomePage();
                 //I commented this out bc the HomePage is now showing fine after purchase is clicked
 
             }

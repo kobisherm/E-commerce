@@ -93,7 +93,6 @@ public class Login extends JFrame {
 
         // Display password text box
         passbox = new JPasswordField(20);
-        passbox.setFont(AppTheme.smallFont);
         gbc.gridx = 1;
         gbc.gridy = 2;
         panel.add(passbox, gbc);
