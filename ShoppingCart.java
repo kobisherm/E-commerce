@@ -103,14 +103,17 @@ public class ShoppingCart {
     /**
      * Adds a sample product to the cart and updates the GUI.
      */
-   public void addProductToCart(productInfo item) {
+  public void addProductToCart(productInfo item) {
+    addItem(item);
+    updateTotalPriceLabel();
+    cartListModel.addElement(item);
+    cartList.setSelectedValue(item, true);
+    cartList.repaint();
+    
+    frame.revalidate(); 
+    frame.repaint();    
+}
 
-        addItem(item);
-        totalPrice = calculateTotalPrice(); // Update the total price
-        updateTotalPriceLabel();
-        cartList.setSelectedValue(item, true);
-        cartList.repaint();
-    }
     private double calculateTotalPrice() {
         double totalPrice = 0.0;
         for (productInfo item : items) {
@@ -144,8 +147,10 @@ public class ShoppingCart {
      * Updates the total price label with the current total price of items in the cart.
      */
     public void updateTotalPriceLabel() {
-        totalPriceLabel.setText("Total Price: $" + String.format("%.2f", getTotalPrice()));
-    }
+         totalPriceLabel.setText("Total Price: $" + String.format("%.2f", getTotalPrice()));
+         frame.revalidate();
+         frame.repaint();
+}
 
     /**
      * Returns the total price of items in the shopping cart.
