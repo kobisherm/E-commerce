@@ -83,10 +83,12 @@ public class Order extends JFrame {
                     "Your purchase was complete, your confirmation will be sent to your email address.",
                     "Purchase Complete",
                     JOptionPane.INFORMATION_MESSAGE);
-
+                window.dispose();
                 // Navigate to the HomePage
-                HomePage home = new HomePage(new ShoppingCart());
-                home.DisplayHomePage();
+                //HomePage home = new HomePage(new ShoppingCart());
+                //home.DisplayHomePage();
+                //I commented this out bc the HomePage is now showing fine after purchase is clicked
+
             }
         });
         panel.add(orderButton);
