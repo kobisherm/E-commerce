@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.text.*;
 
 public class Order extends JFrame {
     private JLabel orderTxt, addressInfoTxt, cardInfoTxt;
@@ -11,7 +12,7 @@ public class Order extends JFrame {
     String[] addressTxtArray = new String[]{"Address 1", "Address 2", "Zipcode", "City", "State"};
     JTextField[] addressBoxArray = new JTextField[5];
 
-    String[] cardTxtArray = new String[]{"Card Name", "Card Number", "CVV"};
+    String[] cardTxtArray = new String[]{"Name on Card", "Card Number", "CVV"};
     JTextField[] cardBoxArray = new JTextField[3];
 
     // The logo image
@@ -22,7 +23,6 @@ public class Order extends JFrame {
     }
 
     public void DisplayOrderScreen() {
-
         // Custom JPanel class to paint the background
         JPanel panel = new JPanel() {
             @Override
@@ -59,6 +59,13 @@ public class Order extends JFrame {
             posy = posy + 50;
         }
 
+        // Assign the individual JTextField objects after they are initialized in makeBox()
+        address1 = addressBoxArray[0];
+        address2 = addressBoxArray[1];
+        zipcode = addressBoxArray[2];
+        city = addressBoxArray[3];
+        state = addressBoxArray[4];
+
         // Display "Card Info"
         makeText(panel, "Card Info", 100, 420, 100, 20, Color.RED);
 
@@ -70,6 +77,17 @@ public class Order extends JFrame {
             posy = posy + 50;
         }
 
+        // Assign the individual JTextField objects after they are initialized in makeBox()
+        cardName = cardBoxArray[0];
+        cardNum = cardBoxArray[1];
+        CVV = cardBoxArray[2];
+
+        // Limit the Card Number field to 16 digits
+        ((PlainDocument) cardNum.getDocument()).setDocumentFilter(new LengthFilter(16));
+        
+        // Limit the CVV field to 3 digits
+        ((PlainDocument) CVV.getDocument()).setDocumentFilter(new LengthFilter(3));
+
         // Add Purchase Button
         orderButton = new JButton("Purchase");
         orderButton.setBounds(350, 750, 100, 30);
@@ -78,17 +96,18 @@ public class Order extends JFrame {
         orderButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Show a popup message
-                JOptionPane.showMessageDialog(window, 
-                    "Your purchase was complete, your confirmation will be sent to your email address.",
-                    "Purchase Complete",
-                    JOptionPane.INFORMATION_MESSAGE);
-                window.dispose();
-                // Navigate to the HomePage
-                //HomePage home = new HomePage(new ShoppingCart());
-                //home.DisplayHomePage();
-                //I commented this out bc the HomePage is now showing fine after purchase is clicked
-
+                if (areRequiredFieldsFilled() && isInputValid()) {
+                    JOptionPane.showMessageDialog(window, 
+                        "Your purchase was complete, your confirmation will be sent to your email address.",
+                        "Purchase Complete",
+                        JOptionPane.INFORMATION_MESSAGE);
+                    window.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(window, 
+                        "Please fill in all required fields and ensure the information is valid.",
+                        "Missing or Invalid Information",
+                        JOptionPane.WARNING_MESSAGE);
+                }
             }
         });
         panel.add(orderButton);
@@ -108,5 +127,49 @@ public class Order extends JFrame {
         boxVar.setBounds(x, y, width, height);
         boxArray[index] = boxVar;
         panel.add(boxVar);
+    }
+    
+    private boolean areRequiredFieldsFilled() {
+        // Check if the required fields are not empty
+        return !(address1.getText().trim().isEmpty() || 
+                 zipcode.getText().trim().isEmpty() || 
+                 city.getText().trim().isEmpty() || 
+                 state.getText().trim().isEmpty() || 
+                 cardName.getText().trim().isEmpty() || 
+                 cardNum.getText().trim().isEmpty() || 
+                 CVV.getText().trim().isEmpty());
+    }
+    
+    private boolean isInputValid() {
+        boolean isCardNameValid = cardName.getText().trim().matches("^[a-zA-Z ]+$");
+        boolean isCardNumValid = cardNum.getText().trim().matches("^\\d{16}$");
+        boolean isCVVValid = CVV.getText().trim().matches("^\\d{3}$");
+        
+        return isCardNameValid && isCardNumValid && isCVVValid;
+    }
+
+    // Inner class to limit the length of input
+    class LengthFilter extends DocumentFilter {
+        private int limit;
+
+        public LengthFilter(int limit) {
+            this.limit = limit;
+        }
+
+        @Override
+        public void insertString(FilterBypass fb, int offset, String str, AttributeSet attr)
+                throws BadLocationException {
+            if (fb.getDocument().getLength() + str.length() <= limit) {
+                super.insertString(fb, offset, str, attr);
+            }
+        }
+
+        @Override
+        public void replace(FilterBypass fb, int offset, int length, String str, AttributeSet attrs)
+                throws BadLocationException {
+            if (fb.getDocument().getLength() + str.length() - length <= limit) {
+                super.replace(fb, offset, length, str, attrs);
+            }
+        }
     }
 }
