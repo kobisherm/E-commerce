@@ -218,6 +218,8 @@ public HomePage(ShoppingCart _cart)
 			productsToDisplay = Product.allProducts;
 		else
 			productsToDisplay = store.searchProduct(searchText);
+
+		if(productsToDisplay.size() == 0) System.out.println("uh oh");
 		refreshItems();
 	}
 	
