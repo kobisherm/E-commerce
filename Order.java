@@ -48,7 +48,7 @@ public class Order extends JFrame {
         makeText(panel, "Order Page", 100, 60, 100, 20, Color.RED);
 
         // Display "Address Info" Title
-        makeText(panel, "Address Info", 100, 100, 100, 20, Color.BLACK);
+        makeText(panel, "Address Info", 100, 100, 100, 20, Color.RED);
 
         int posy = 150;
         int txtx = 140;
