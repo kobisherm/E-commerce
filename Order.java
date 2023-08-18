@@ -46,7 +46,7 @@ public class Order extends JFrame {
         makeText(panel, "Order Page", 100, 60, 100, 20, Color.RED);
 
         // Display "Address Info" Title
-        makeText(panel, "Address Info", 100, 100, 100, 20, Color.BLACK);
+        makeText(panel, "Address Info", 100, 100, 100, 20, Color.RED);
 
         int posy = 150;
         int txtx = 140;
@@ -96,18 +96,17 @@ public class Order extends JFrame {
         orderButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (areRequiredFieldsFilled() && isInputValid()) {
-                    JOptionPane.showMessageDialog(window, 
-                        "Your purchase was complete, your confirmation will be sent to your email address.",
-                        "Purchase Complete",
-                        JOptionPane.INFORMATION_MESSAGE);
-                    window.dispose();
-                } else {
-                    JOptionPane.showMessageDialog(window, 
-                        "Please fill in all required fields and ensure the information is valid.",
-                        "Missing or Invalid Information",
-                        JOptionPane.WARNING_MESSAGE);
-                }
+                // Show a popup message
+                JOptionPane.showMessageDialog(window, 
+                    "Your purchase was complete, your confirmation will be sent to your email address.",
+                    "Purchase Complete",
+                    JOptionPane.INFORMATION_MESSAGE);
+                window.dispose();
+                // Navigate to the HomePage
+                //HomePage home = new HomePage(new ShoppingCart());
+                //home.DisplayHomePage();
+                //I commented this out bc the HomePage is now showing fine after purchase is clicked
+
             }
         });
         panel.add(orderButton);
