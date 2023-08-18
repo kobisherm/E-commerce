@@ -1,3 +1,4 @@
+import Products.Product;
 import Products.productInfo;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,7 +21,7 @@ public class Store {
      * Constructor to create a Store object with an empty product list and user database.
      */
     public Store() {
-        productList = new ArrayList<>();
+        productList = Product.allProducts;
         userDatabase = new HashMap<>();
     }
 

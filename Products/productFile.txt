@@ -1,7 +1,7 @@
 101
 Nike Dunk Low Retro
 110.99
-The upper Nike Dunk Low Retro White Black is constructed of white leather with black leather overlays and Swooshes. Classic Nike branding is featured on the nylon tongue, nodding to traditional Dunk design elements. A white midsole and black outsole complete the design.
+The upper Nike Dunk Low Retro White Black is constructed of white leather with black leather overlays and Swooshes. Classic Nike branding is featured on the nylon tongue, nodding to traditional Dunk design elements.
 Nike
 null
 Black & White
@@ -46,7 +46,7 @@ Products\\productImages\\105.jpg
 106
 Jordan 4 Retro
 209.99
-Jordan Brand brought back this fan favorite colorway that is constructed using premium black nubuck uppers with splashes of Tour Yellow throughout the midsole, lace eyelets, and tongue. 
+Jordan Brand brought back this fan favorite colorway that is constructed using premium black nubuck uppers with splashes of Tour Yellow. 
 Jordan
 null
 Yellow & Black
@@ -55,7 +55,7 @@ Products\\productImages\\106.jpg
 107
 Jordan 3 Retro
 209.99
-Jordan used the same design and specs as the original 1988 Jordan 3 silhouette to help craft the second model of the Reimagined series. The Air Jordan 3 Retro White Cement is constructed with a white leather upper, and off-white colored midsoles and heel tabs, helping to give the sneaker a vintage design.
+The Air Jordan 3 Retro White Cement is constructed with a white leather upper, and off-white colored midsoles and heel tabs, helping to give the sneaker a vintage design.
 Jordan
 null
 White Cement
@@ -64,7 +64,7 @@ Products\\productImages\\107.jpg
 108
 Nike Air Max 1 '86 OG
 149.99
-The Air Max 1 ‘86 Big Bubble released as Nikes premier Air Max Day release in 2023. The sneakers are constructed using grey synthetic nubuck, white mesh and red synthetic suede across the uppers and a large air unit on the midsole. Nike used Sport Red branding on the tongue and heel of the sneaker.
+The Air Max 1 ‘86 Big Bubble is constructed using grey synthetic nubuck, white mesh and red synthetic suede across the uppers and a large air unit on the midsole.
 Nike
 null
 Red, Grey, & Black
@@ -91,7 +91,7 @@ Products\\productImages\\110.jpg
 111
 Saint Laurent Court Classic SL/06 Low
 349.99
-The Saint Laurent Court Classic is a low-profile sneaker made with distressed organic cotton canvas and leather stitched saint laurent along outer side and saint laurent signature embossed back tab
+The Saint Laurent Court Classic is a low-profile sneaker made with distressed organic cotton canvas and leather stitched saint laurent along outer side
 Saint Laurent
 null
 Cream
@@ -100,7 +100,7 @@ Products\\productImages\\111.jpg
 112
 Jordan 11 Retro
 224.99
-The Air Jordan 11 Cherry brings a Chicago colorway to the iconic patent leather sneaker. Cherry red patent leather mudguards surround the majority of the upper, alongside white leather and a matching Cherry red Jumpman.
+The Air Jordan 11 Cherry brings a Chicago colorway to the iconic patent leather sneaker. It features cherry red patent leather mudguards, alongside white leather and a matching Cherry red Jumpman.
 Jordan
 null
 White & Red
