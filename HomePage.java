@@ -173,7 +173,7 @@ public HomePage(ShoppingCart _cart)
 			productInfo item = productsToDisplay.get(i);
 
 			ImageIcon image = new ImageIcon(item.getImage());
-			image = AppTheme.scaleImage(image, 0.1f);
+			image = AppTheme.scaleImage(image, 200);
 			JButton display = new JButton(image);
 			display.addActionListener(x -> OnItemClick(item));
 
