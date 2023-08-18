@@ -1,6 +1,5 @@
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -85,7 +84,7 @@ public class ItemInterface extends JFrame{
         }
         catch(Exception e)
         {
-            sizeInput.setBackground(AppTheme.darkRed);
+            sizeInput.setBackground(AppTheme.red);
             return;
         }
         if(selectedSize < 1 || selectedSize > 15) 

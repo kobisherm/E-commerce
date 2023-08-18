@@ -112,9 +112,12 @@ public class ShoppingCart {
   public void addProductToCart(productInfo item) {
     addItem(item);
     updateTotalPriceLabel();
-    cartListModel.addElement(item);
-    cartList.setSelectedValue(item, true);
-    cartList.repaint();
+    if(cartListModel != null) 
+    {
+        cartListModel.addElement(item);
+        cartList.setSelectedValue(item, true);
+        cartList.repaint();
+    }
     
     frame.revalidate(); 
     frame.repaint();    
@@ -154,7 +157,8 @@ public class ShoppingCart {
      */
     public void updateTotalPriceLabel() {
          System.out.println("New total price: " + totalPrice);
-         totalPriceLabel.setText("Total Price: $" + String.format("%.2f", getTotalPrice()));
+         if(totalPriceLabel != null)
+            totalPriceLabel.setText("Total Price: $" + String.format("%.2f", getTotalPrice()));
 }
 
     /**
