@@ -235,6 +235,9 @@ public HomePage(ShoppingCart _cart)
 	
 	public void onLogoutClick()
 	{
+		if(cart.frame != null){
+			cart.frame.dispose();
+		}
 		Login login = new Login();
 		login.loginScreen();
 		dispose();
