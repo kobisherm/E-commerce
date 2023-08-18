@@ -228,6 +228,8 @@ public HomePage(ShoppingCart _cart)
 
 	public void onCheckoutClick()
 	{
+		Order shoe = new Order();
+		shoe.DisplayOrderScreen();
 		System.out.println("going to checkout page");
 	}
 	
