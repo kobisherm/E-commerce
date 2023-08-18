@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.text.*;
 
 public class Order extends JFrame {
     private JLabel orderTxt, addressInfoTxt, cardInfoTxt;
