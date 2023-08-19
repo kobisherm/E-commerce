@@ -33,10 +33,14 @@ public class ShoppingCart {
     // }
 
     //is called from homepage
+    /**
+     * Display the shopping cart GUI.
+     */
+
     public void displayShoppingCart() { //Constructor to start the shopping cart
-        frame.getContentPane().removeAll();
-         frame.revalidate();
-         frame.repaint();
+        frame.getContentPane().removeAll(); // Remove all existing components from the content pane;
+        frame.revalidate(); // Revalidate and repaint the frame to update the changes
+        frame.repaint();
 
         cartListModel = new DefaultListModel<>(); //create a new list mode
         cartList = new JList<>();// create a jlist component
@@ -44,12 +48,14 @@ public class ShoppingCart {
         updateTotalPriceLabel();
         cartList.setModel(cartListModel);
 
-         
-            cartListModel.clear();
-             for (productInfo item : items) {
+        
+        cartListModel.clear(); // Clear the cartListModel to make sure we have a new display
+             for (productInfo item : items)//Adds items from the shopping cart to the cartListModel
+              { 
                 cartListModel.addElement(item);
          }
-        cartList.setCellRenderer(new DefaultListCellRenderer() {
+        cartList.setCellRenderer(new DefaultListCellRenderer() 
+        {
         @Override
         public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
             if (value instanceof productInfo) {
@@ -123,14 +129,6 @@ public class ShoppingCart {
     frame.repaint();    
 }
 
-    private double calculateTotalPrice() {
-        double totalPrice = 0.0;
-        for (productInfo item : items) {
-         totalPrice += item.getPrice();
-        }
-        return totalPrice;
-}
-
     /**
      * Removes the selected product from the cart and updates the GUI.
      */
@@ -169,9 +167,5 @@ public class ShoppingCart {
         return totalPrice;
     }
 
-    /**
-     * Main method to start the shopping cart application.
-     * @param args Command-line arguments (unused).
-     */
 
 }
