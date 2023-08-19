@@ -18,10 +18,6 @@ public class Order extends JFrame {
     // The logo image
     private ImageIcon logoIcon = new ImageIcon("Logo.png");
 
-    public static void main(String[] args) {
-        new Order().DisplayOrderScreen();
-    }
-
     public void DisplayOrderScreen() {
         // Custom JPanel class to paint the background
         JPanel panel = new JPanel() {
