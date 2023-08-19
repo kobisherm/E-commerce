@@ -57,11 +57,13 @@ public class ShoppingCart {
         cartList.setCellRenderer(new DefaultListCellRenderer() 
         {
         @Override
-        public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-            if (value instanceof productInfo) {
-                value = ((productInfo) value).getName();
+        public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) // Override the getListCellRendererComponent method to customize how items are displayed in the JList
+        {
+            if (value instanceof productInfo)   // Check if the value is an instance of the productInfo class
+            {
+                value = ((productInfo) value).getName();// If it is, get the name of the product and display it in the list
             }
-            return super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+            return super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);// This returns a component that represents how the item should be displayed
             
         }
     });
