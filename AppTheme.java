@@ -93,6 +93,18 @@ public final class AppTheme {
 		return new ImageIcon(image.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH));
 	}
 
+	/**
+ * <p>
+ * Class/Module name: AppTheme
+ * @since 1.0 (2023-08)
+ * @author Kobi Sherman
+ * Description:
+ * This function takes in an ImageIcon and returns a scaled version of it.
+ * @return an ImageIcon that is a scaled version of an original ImageIcon.
+ * @param image - the original unscaled image
+ * @param newWidth - an int to set the desired image width
+ * </p>
+ */
 	public static ImageIcon scaleImage(ImageIcon image, int newWidth)
 	{
 		float scale = (float)newWidth / image.getIconWidth();

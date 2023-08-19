@@ -9,7 +9,17 @@ import javax.swing.JTextField;
 
 import Products.productInfo;
 
-//This class provides UI to add items to cart
+/**
+ * <p>
+ * Class/Module name: ItemInterface
+ * @since 1.0 (2023-10)
+ * @author Kobi Sherman
+ * Description:
+ * This class represents the pop-up window that allows adding items to cart.
+ * The class contains the necessary GUI components to repond to user input, 
+ * and it also performs validation checkin for the requested fields.
+ * </p>
+ */
 public class ItemInterface extends JFrame{
     
     public final productInfo item;
@@ -17,6 +27,17 @@ public class ItemInterface extends JFrame{
     JTextField sizeInput;
     JTextField categoryInput;
 
+/**
+ * <p>
+ * Class/Module name: ItemInterface
+ * @since 1.0 (2023-10)
+ * @author Kobi Sherman
+ * Description:
+ * This function creates a new instance of the ItemInterface window.
+ * @param item - The product requested to add to cart
+ * @param cart - The shopping cart in which to add the item
+ * </p>
+ */
     public ItemInterface(productInfo item, ShoppingCart cart)
     {
         this.item = item;
@@ -76,6 +97,16 @@ public class ItemInterface extends JFrame{
         setVisible(true);
     }
 
+/**
+ * <p>
+ * Class/Module name: ItemInterface
+ * @since 1.0 (2023-10)
+ * @author Kobi Sherman
+ * Description:
+ * This function is called when the user clickes the 'Yes' button. 
+ * Input validation in performed, and the item is added to the cart.
+ * </p>
+ */
     public void OnYesClick()
     {
         int selectedSize;
