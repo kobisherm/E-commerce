@@ -3,11 +3,37 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.text.*;
 
+/**
+ * <p>
+ * Class Name: Order.java<br>
+ * @since 1.0 (2023-08)<br>
+ * @author Armon Lee & Davit Sargsyan<br>
+ * Description: This class gives the users the option<br>
+ * to order the products that they added to the shopping<br>
+ * cart. They'll also be able to put in their card information<br>
+ * and shipping information to properly purchase their items<br>
+ * Important Data Structures: <br>
+ *    - String[] addressTxtArray - holds array of address text strings<br>
+ *    - String[] cardTxtArray - holds array of card text strings<br>
+ *    - JTextField[] addressBoxArray - holds array of address text boxes<br>
+ *    - JTextField[] cardBoxArray - holds array of card text boxes<br>
+ * </p>
+ */
+
 public class Order extends JFrame {
-    private JLabel orderTxt, addressInfoTxt, cardInfoTxt;
+        /**
+     * <p>
+     * Important Variables: <br>
+     * address1, address2, zipcode, city, state - displays text field box<br>
+     * cardName, cardNum, CVV - displays text field box<br>
+     * purchaseButton - displays purchase button<br>
+     * logoLabel - displays logo<br>
+     * </p>
+     */
+
     private JTextField address1, address2, zipcode, city, state;
     private JTextField cardName, cardNum, CVV;
-    private JButton orderButton;
+    private JButton purchaseButton;
 
     String[] addressTxtArray = new String[]{"Address 1", "Address 2", "Zipcode", "City", "State"};
     JTextField[] addressBoxArray = new JTextField[5];
@@ -18,6 +44,14 @@ public class Order extends JFrame {
     // The logo image
     private ImageIcon logoIcon = new ImageIcon("Logo.png");
 
+    /**
+     * <p>
+     * DisplayOrderScreen() - displays the panel and frame<br>
+     * for the Order.java interface. As well as, displaying<br>
+     * the text strings and boxes for the card and shipping<br>
+     * information.<br>
+     * </p>
+     */
     public void DisplayOrderScreen() {
         // Custom JPanel class to paint the background
         JPanel panel = new JPanel() {
@@ -44,11 +78,13 @@ public class Order extends JFrame {
         // Display "Address Info" Title
         makeText(panel, "Address Info", 100, 100, 100, 20, Color.BLACK);
 
-        int posy = 150;
-        int txtx = 140;
-        int boxx = txtx + 110;
+        int posy = 150; //y position of text strings and boxes
+        int txtx = 140; //x position of text strings
+        int boxx = txtx + 110; //x position of text boxes
 
-        // Display address text
+        // Display address text and boxes
+        // Loop through addressTxtArray and addressBoxArray
+        // Call makeText and makeBox methods with each element in arrays to create and display
         for (int i = 0; i < addressTxtArray.length; i++) {
             makeText(panel, addressTxtArray[i], txtx, posy, 100, 20, Color.WHITE);
             makeBox(panel, addressBoxArray, i, boxx, posy, 193, 28);
@@ -65,7 +101,7 @@ public class Order extends JFrame {
         // Display "Card Info"
         makeText(panel, "Card Info", 100, 420, 100, 20, Color.RED);
 
-        // Display card text
+        // Display card text and boxes
         posy = 470;
         for (int i = 0; i < cardTxtArray.length; i++) {
             makeText(panel, cardTxtArray[i], txtx, posy, 100, 20, Color.WHITE);
@@ -85,11 +121,11 @@ public class Order extends JFrame {
         ((PlainDocument) CVV.getDocument()).setDocumentFilter(new LengthFilter(3));
 
         // Add Purchase Button
-        orderButton = new JButton("Purchase");
-        orderButton.setBounds(350, 750, 100, 30);
-        orderButton.setBackground(Color.RED);
-        orderButton.setForeground(Color.BLACK);
-        orderButton.addActionListener(new ActionListener() {
+        purchaseButton = new JButton("Purchase");
+        purchaseButton.setBounds(350, 750, 100, 30);
+        purchaseButton.setBackground(Color.RED);
+        purchaseButton.setForeground(Color.BLACK);
+        purchaseButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (areRequiredFieldsFilled() && isInputValid()) {
@@ -106,11 +142,21 @@ public class Order extends JFrame {
                 }
             }
         });
-        panel.add(orderButton);
+        panel.add(purchaseButton);
 
         window.setVisible(true);
     }
 
+    /**
+     * makeText() - create and displays text strings on the GUI
+     * @param panel - passes JPanel to add text
+     * @param txt - passes text element string from addressTxtArray
+     * @param x - position x
+     * @param y - position y
+     * @param width
+     * @param height
+     * @param color
+     */
     public void makeText(JPanel panel, String txt, int x, int y, int width, int height, Color color) {
         JLabel txtVar = new JLabel(txt);
         txtVar.setBounds(x, y, width, height);
@@ -118,6 +164,16 @@ public class Order extends JFrame {
         panel.add(txtVar);
     }
 
+    /**
+     * makeBox() - create and displays text boxes on the GUI
+     * @param panel - passes JPanel to add text
+     * @param boxArray - passes text element string from cardTxtArray
+     * @param index - index of cardTxtArray
+     * @param x - position x
+     * @param y - position y
+     * @param width
+     * @param height
+     */
     public void makeBox(JPanel panel, JTextField[] boxArray, int index, int x, int y, int width, int height) {
         JTextField boxVar = new JTextField();
         boxVar.setBounds(x, y, width, height);
