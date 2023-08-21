@@ -180,7 +180,12 @@ public class Order extends JFrame {
         boxArray[index] = boxVar;
         panel.add(boxVar);
     }
-    
+    /**
+     * <p>
+     * This method checks for all required fields to be filled<br>
+     * </p>
+     * @return true if all fields are entered, otherwise false
+     */ 
     private boolean areRequiredFieldsFilled() {
         // Check if the required fields are not empty
         return !(address1.getText().trim().isEmpty() || 
@@ -191,7 +196,17 @@ public class Order extends JFrame {
                  cardNum.getText().trim().isEmpty() || 
                  CVV.getText().trim().isEmpty());
     }
-    
+
+
+    /**
+     * <p>
+     * This method check for input fields to contain the information we need<br>
+     * such as numbers for card number and security code field.<br>
+     * We use regular expressions to achieve this result.<br>
+     * </p>
+     * @return true if All fields are valid, such as only numbers for CVV and 
+     * card number field and only characters for Name on card field, otherwise false
+     */
     private boolean isInputValid() {
         boolean isCardNameValid = cardName.getText().trim().matches("^[a-zA-Z ]+$");
         boolean isCardNumValid = cardNum.getText().trim().matches("^\\d{16}$");
@@ -200,7 +215,13 @@ public class Order extends JFrame {
         return isCardNameValid && isCardNumValid && isCVVValid;
     }
 
-    // Inner class to limit the length of input
+    /**
+     * <p>
+     * This class is a costum DocumentFilter named LengthFilter designed<br>
+     * to restrict the number of characters a user can input into a text fields<br>
+     * such as JTextField.
+     * </p>
+     */ 
     class LengthFilter extends DocumentFilter {
         private int limit;
 
@@ -208,6 +229,15 @@ public class Order extends JFrame {
             this.limit = limit;
         }
 
+        /**
+         * <p>
+         * insertString: Deals with inserting new text.<br>
+         * This method is called for every key insertion into this field<br>
+         * In insertString it checks if the current length of the text<br>
+         * (fb.getDocument().getLength()) plus the length of the new text to be<br>
+         * inserted (str.length()) is within the limit. 
+         * </p> 
+         */
         @Override
         public void insertString(FilterBypass fb, int offset, String str, AttributeSet attr)
                 throws BadLocationException {
@@ -215,7 +245,14 @@ public class Order extends JFrame {
                 super.insertString(fb, offset, str, attr);
             }
         }
-
+        /**
+         * <p>
+         * replace: this method is invoked when you're replacing existing<br>
+         * text, which is a combination of deleting some text and inserting new text<br>
+         * in it's place. this basically would not allow us to copy and paste some string<br>
+         * which goes off limits.
+         * </p>
+         */ 
         @Override
         public void replace(FilterBypass fb, int offset, int length, String str, AttributeSet attrs)
                 throws BadLocationException {
